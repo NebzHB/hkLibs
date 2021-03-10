@@ -15,9 +15,6 @@
 * along with Jeedom. If not, see <http://www.gnu.org/licenses/>.
 */
 
-/* * ***************************Includes********************************/
-include_file('core', 'homekitEnums', 'class', 'hkControl');
-
 class homekitUtils {
 	/***************************Attributs*******************************/	
 	
