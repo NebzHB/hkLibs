@@ -75,10 +75,6 @@ class homekitEnums {
 	];
 	
 	public static $_homekitValues = [
-	  '000000B0-0000-1000-8000-0026BB765291' => [
-		0 => 'Inactive',
-		1 => 'Active',
-	  ],
 	  '00000065-0000-1000-8000-0026BB765291' => [
 		0 => '2.5',
 		1 => '10',
