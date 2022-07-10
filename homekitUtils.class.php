@@ -118,7 +118,7 @@ class homekitUtils {
 	public static function HStoHTML($iH, $iS) {
 		$iV=100;
 		if($iH < 0) { $iH = 0; }    // Hue:
-		if($iH > 360 { $iH = 360; } //   0-360
+		if($iH > 360) { $iH = 360; } //   0-360
 		if($iS < 0) { $iS = 0; }    // Saturation:
 		if($iS > 100) { $iS = 100; }//   0-100
 		if($iV < 0) { $iV = 0; }    // Lightness:
