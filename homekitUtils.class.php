@@ -34,17 +34,17 @@ class homekitUtils {
 		}
 	}
 	public static function expandUUID($uuid) {
-		if(strlen($uuid) > 8) return strtoupper($uuid);	
+		if(strlen($uuid) > 8) { return strtoupper($uuid); }
 		$suffix = "-0000-1000-8000-0026BB765291";
 		return str_pad(strtoupper($uuid), 8, "0", STR_PAD_LEFT).$suffix;	
 	}	
 	public static function sanitizeValue($currentValue,$c) {
 		$val=0;
-		if(!$c) // just return the value if no characteristic
+		if(!$c) {// just return the value if no characteristic
 			return $val;
-		else
-			if(!$c['format']) 
-				return $val;
+		} elseif(!$c['format']) { 
+			return $val;
+		}
 
 		switch($c['format']) {
 				case 'uint8':
@@ -53,30 +53,30 @@ class homekitUtils {
 				case 'uint64':
 					$val = intval($currentValue);
 					$val = abs($val); // unsigned
-					if(!$val) $val = 0;
-					if(isset($c['minValue']) && $val < intval($c['minValue'])) $val = intval($c['minValue']);
-					if(isset($c['maxValue']) && $val > intval($c['maxValue'])) $val = intval($c['maxValue']);
+					if(!$val) { $val = 0; }
+					if(isset($c['minValue']) && $val < intval($c['minValue'])) { $val = intval($c['minValue']); }
+					if(isset($c['maxValue']) && $val > intval($c['maxValue'])) { $val = intval($c['maxValue']); }
 				break;
 				case 'int':
 					$val = intval($currentValue);
 					if(!$val) $val = 0;
-					if(isset($c['minValue']) && $val < intval($c['minValue'])) $val = intval($c['minValue']);
-					if(isset($c['maxValue']) && $val > intval($c['maxValue'])) $val = intval($c['maxValue']);
+					if(isset($c['minValue']) && $val < intval($c['minValue'])) { $val = intval($c['minValue']); }
+					if(isset($c['maxValue']) && $val > intval($c['maxValue'])) { $val = intval($c['maxValue']); }
 				break;
 				case 'float' :
 					$val = self::minStepRound(floatval($currentValue),$c);
 					if(!$val) $val = 0.0;
-					if(isset($c['minValue']) && $val < floatval($c['minValue'])) $val = floatval($c['minValue']);
-					if(isset($c['maxValue']) && $val > floatval($c['maxValue'])) $val = floatval($c['maxValue']);
+					if(isset($c['minValue']) && $val < floatval($c['minValue'])) { $val = floatval($c['minValue']); }
+					if(isset($c['maxValue']) && $val > floatval($c['maxValue'])) { $val = floatval($c['maxValue']); }
 				break;
 				case 'bool' :
 					$val = self::toBool($currentValue);
-					if(!$val) $val = false;
+					if(!$val) { $val = false; }
 				break;
 				case 'string' :
 					//if(!$currentValue)
 					$val = strval($currentValue);
-					if(!$val) $val = '';
+					if(!$val) { $val = ''; }
 				break;
 				case 'tlv8' :
 				case 'data' :
@@ -92,8 +92,11 @@ class homekitUtils {
 			$c['minStep'] = 1;
 		}
 		$prec=explode('.',strval($c['minStep']));
-		if(isset($prec[1])) $prec=$prec[1];
-		else $prec='';
+		if(isset($prec[1])) { 
+			$prec=$prec[1]; 
+		} else { 
+			$prec=''; 
+		}
 		$prec = strlen($prec);
 
 		if($val) {
@@ -105,7 +108,7 @@ class homekitUtils {
 	}
 	
 	public static function toBool($val) {
-		if ($val === 'false' || $val === '0') {
+		if($val === 'false' || $val === '0') {
 			return false;
 		} else {
 			return boolval($val);
@@ -114,12 +117,12 @@ class homekitUtils {
 	
 	public static function HStoHTML($iH, $iS) {
 		$iV=100;
-		if($iH < 0)   $iH = 0;   // Hue:
-		if($iH > 360) $iH = 360; //   0-360
-		if($iS < 0)   $iS = 0;   // Saturation:
-		if($iS > 100) $iS = 100; //   0-100
-		if($iV < 0)   $iV = 0;   // Lightness:
-		if($iV > 100) $iV = 100; //   0-100
+		if($iH < 0) { $iH = 0; }    // Hue:
+		if($iH > 360 { $iH = 360; } //   0-360
+		if($iS < 0) { $iS = 0; }    // Saturation:
+		if($iS > 100) { $iS = 100; }//   0-100
+		if($iV < 0) { $iV = 0; }    // Lightness:
+		if($iV > 100) { $iV = 100; }//   0-100
 
 		$dS = $iS/100.0; // Saturation: 0.0-1.0
 		$dV = $iV/100.0; // Lightness:  0.0-1.0
@@ -127,7 +130,7 @@ class homekitUtils {
 		$dH = $iH/60.0;  // H-Prime:    0.0-6.0
 		$dT = $dH;       // Temp variable
 
-		while($dT >= 2.0) $dT -= 2.0; // php modulus does not work with float
+		while($dT >= 2.0) { $dT -= 2.0; }// php modulus does not work with float
 		$dX = $dC*(1-abs($dT-1));     // as used in the Wikipedia link
 
 		switch(floor($dH)) {
@@ -156,7 +159,7 @@ class homekitUtils {
 	
 	public static function HTMLtoHS($html)  {
 
-		if($html[0] != "#") $html="#".$html;
+		if($html[0] != "#") { $html="#".$html; }
 		list($R, $G, $B) = sscanf($html, "#%02x%02x%02x");	
 
 		$HSL = array();
@@ -171,25 +174,22 @@ class homekitUtils {
 
 		$V = $var_Max;
 
-		if ($del_Max == 0)
-		{
+		if($del_Max == 0) {
 			$H = 0;
 			$S = 0;
-		}
-		else
-		{
+		} else {
 			$S = $del_Max / $var_Max;
 
 			$del_R = ( ( ( $var_Max - $var_R ) / 6 ) + ( $del_Max / 2 ) ) / $del_Max;
 			$del_G = ( ( ( $var_Max - $var_G ) / 6 ) + ( $del_Max / 2 ) ) / $del_Max;
 			$del_B = ( ( ( $var_Max - $var_B ) / 6 ) + ( $del_Max / 2 ) ) / $del_Max;
 
-			if      ($var_R == $var_Max) $H = $del_B - $del_G;
-			else if ($var_G == $var_Max) $H = ( 1 / 3 ) + $del_R - $del_B;
-			else if ($var_B == $var_Max) $H = ( 2 / 3 ) + $del_G - $del_R;
+			if     ($var_R == $var_Max) { $H = $del_B - $del_G; }
+			elseif ($var_G == $var_Max) { $H = ( 1 / 3 ) + $del_R - $del_B; }
+			elseif ($var_B == $var_Max) { $H = ( 2 / 3 ) + $del_G - $del_R; }
 
-			if ($H<0) $H++;
-			if ($H>1) $H--;
+			if($H<0) { $H++; }
+			if($H>1) { $H--; }
 		}
 
 		return array( round($H*360),round($S*100) );
