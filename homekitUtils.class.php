@@ -115,84 +115,91 @@ class homekitUtils {
 		}
 	}
 	
-	public static function HStoHTML($iH, $iS) {
-		$iV=100;
-		if($iH < 0) { $iH = 0; }    // Hue:
-		if($iH > 360) { $iH = 360; } //   0-360
-		if($iS < 0) { $iS = 0; }    // Saturation:
-		if($iS > 100) { $iS = 100; }//   0-100
-		if($iV < 0) { $iV = 0; }    // Lightness:
-		if($iV > 100) { $iV = 100; }//   0-100
-
-		$dS = $iS/100.0; // Saturation: 0.0-1.0
-		$dV = $iV/100.0; // Lightness:  0.0-1.0
-		$dC = $dV*$dS;   // Chroma:     0.0-1.0
-		$dH = $iH/60.0;  // H-Prime:    0.0-6.0
-		$dT = $dH;       // Temp variable
-
-		while($dT >= 2.0) { $dT -= 2.0; }// php modulus does not work with float
-		$dX = $dC*(1-abs($dT-1));     // as used in the Wikipedia link
-
-		switch(floor($dH)) {
-		    case 0:
-			$dR = $dC; $dG = $dX; $dB = 0.0; break;
-		    case 1:
-			$dR = $dX; $dG = $dC; $dB = 0.0; break;
-		    case 2:
-			$dR = 0.0; $dG = $dC; $dB = $dX; break;
-		    case 3:
-			$dR = 0.0; $dG = $dX; $dB = $dC; break;
-		    case 4:
-			$dR = $dX; $dG = 0.0; $dB = $dC; break;
-		    case 5:
-			$dR = $dC; $dG = 0.0; $dB = $dX; break;
-		    default:
-			$dR = 0.0; $dG = 0.0; $dB = 0.0; break;
+	public static function HStoHTML($hue, $saturation) {
+		$brightness=100;
+		
+		$hue /= 60;
+		$saturation /= 100;
+		$brightness /= 100;
+		
+		$i = floor($hue);
+		$f = $hue - $i;
+		
+		$p = $brightness * (1 - $saturation);
+		$q = $brightness * (1 - $saturation * $f);
+		$t = $brightness * (1 - $saturation * (1 - $f));
+		
+		switch ($i) {
+		case 0:
+		    $r = $brightness;
+		    $g = $t;
+		    $b = $p;
+		    break;
+		case 1:
+		    $r = $q;
+		    $g = $brightness;
+		    $b = $p;
+		    break;
+		case 2:
+		    $r = $p;
+		    $g = $brightness;
+		    $b = $t;
+		    break;
+		case 3:
+		    $r = $p;
+		    $g = $q;
+		    $b = $brightness;
+		    break;
+		case 4:
+		    $r = $t;
+		    $g = $p;
+		    $b = $brightness;
+		    break;
+		default:
+		    $r = $brightness;
+		    $g = $p;
+		    $b = $q;
+		    break;
 		}
-
-		$dM  = $dV - $dC;
-		$dR += $dM; $dG += $dM; $dB += $dM;
-		$dR *= 255; $dG *= 255; $dB *= 255;
-
-		return '#'.sprintf("%02X",round($dR)).sprintf("%02X",round($dG)).sprintf("%02X",round($dB));
+		
+		$r = round($r * 255);
+		$g = round($g * 255);
+		$b = round($b * 255);
+		
+		return sprintf("#%02x%02x%02x", $r, $g, $b);
 	}
 	
 	public static function HTMLtoHS($html)  {
-
 		if($html[0] != "#") { $html="#".$html; }
-		list($R, $G, $B) = sscanf($html, "#%02x%02x%02x");	
-
-		$HSL = array();
-
-		$var_R = ($R / 255);
-		$var_G = ($G / 255);
-		$var_B = ($B / 255);
-
-		$var_Min = min($var_R, $var_G, $var_B);
-		$var_Max = max($var_R, $var_G, $var_B);
-		$del_Max = $var_Max - $var_Min;
-
-		$V = $var_Max;
-
-		if($del_Max == 0) {
-			$H = 0;
-			$S = 0;
+		list($r, $g, $b) = sscanf($html, "#%02x%02x%02x");	
+		$r /= 255.0;
+		$g /= 255.0;
+		$b /= 255.0;
+		
+		$max = max($r, $g, $b);
+		$min = min($r, $g, $b);
+		$delta = $max - $min;
+		
+		$brightness = $max;
+		$saturation = ($max != 0) ? ($delta / $max) : 0;
+		
+		if ($saturation == 0) {
+			$hue = 0;
 		} else {
-			$S = $del_Max / $var_Max;
-
-			$del_R = ( ( ( $var_Max - $var_R ) / 6 ) + ( $del_Max / 2 ) ) / $del_Max;
-			$del_G = ( ( ( $var_Max - $var_G ) / 6 ) + ( $del_Max / 2 ) ) / $del_Max;
-			$del_B = ( ( ( $var_Max - $var_B ) / 6 ) + ( $del_Max / 2 ) ) / $del_Max;
-
-			if     ($var_R == $var_Max) { $H = $del_B - $del_G; }
-			elseif ($var_G == $var_Max) { $H = ( 1 / 3 ) + $del_R - $del_B; }
-			elseif ($var_B == $var_Max) { $H = ( 2 / 3 ) + $del_G - $del_R; }
-
-			if($H<0) { $H++; }
-			if($H>1) { $H--; }
+			if ($r == $max) {
+			    $hue = ($g - $b) / $delta;
+			} elseif ($g == $max) {
+			    $hue = 2 + ($b - $r) / $delta;
+			} else {
+			    $hue = 4 + ($r - $g) / $delta;
+			}
+			$hue *= 60;
+			if ($hue < 0) {
+			    $hue += 360;
+			}
 		}
-
-		return array( round($H*360),round($S*100) );
+		
+		return array(round($hue), round($saturation * 100), round($brightness * 100));
 	}
 	/***************************Instance Methods************************/
 }
