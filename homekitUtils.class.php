@@ -27,11 +27,7 @@ class homekitUtils {
 			'lux'=>"lux",
 			'seconds'=>"s"
 		];
-		if(array_key_exists($label,$units)) {
-			return $units[$label];
-		} else {
-			return $label;
-		}
+		return $units[$label] ?? $label;
 	}
 	public static function expandUUID($uuid) {
 		if(strlen($uuid) > 8) { return strtoupper($uuid); }
