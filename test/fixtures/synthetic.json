@@ -1,0 +1,784 @@
+{
+ "id": "AA:BB:CC:DD:EE:FF",
+ "name": "Pont test",
+ "accessories": [
+  {
+   "aid": 2,
+   "services": [
+    {
+     "type": "0000003E-0000-1000-8000-0026BB765291",
+     "iid": 1,
+     "typeLabel": "accessory-information",
+     "serviceOriginalName": "TV Salon",
+     "characteristics": [
+      {
+       "type": "00000014-0000-1000-8000-0026BB765291",
+       "iid": 2,
+       "perms": [
+        "pw"
+       ],
+       "format": "bool",
+       "typeLabel": "identify"
+      },
+      {
+       "type": "00000020-0000-1000-8000-0026BB765291",
+       "iid": 3,
+       "perms": [
+        "pr"
+       ],
+       "format": "string",
+       "typeLabel": "manufacturer",
+       "value": "Acme <b>Corp</b>"
+      },
+      {
+       "type": "00000021-0000-1000-8000-0026BB765291",
+       "iid": 4,
+       "perms": [
+        "pr"
+       ],
+       "format": "string",
+       "typeLabel": "model",
+       "value": "M1"
+      },
+      {
+       "type": "00000023-0000-1000-8000-0026BB765291",
+       "iid": 5,
+       "perms": [
+        "pr"
+       ],
+       "format": "string",
+       "typeLabel": "name",
+       "value": "TV Salon"
+      },
+      {
+       "type": "00000030-0000-1000-8000-0026BB765291",
+       "iid": 6,
+       "perms": [
+        "pr"
+       ],
+       "format": "string",
+       "typeLabel": "serial-number",
+       "value": "123"
+      },
+      {
+       "type": "00000052-0000-1000-8000-0026BB765291",
+       "iid": 7,
+       "perms": [
+        "pr"
+       ],
+       "format": "string",
+       "typeLabel": "firmware.revision",
+       "value": "1.0"
+      }
+     ]
+    },
+    {
+     "type": "000000D8-0000-1000-8000-0026BB765291",
+     "iid": 8,
+     "typeLabel": "television",
+     "characteristics": [
+      {
+       "type": "000000E1-0000-1000-8000-0026BB765291",
+       "iid": 13,
+       "perms": [
+        "pw"
+       ],
+       "format": "uint8",
+       "typeLabel": "remote-key",
+       "minValue": 0,
+       "maxValue": 16,
+       "minStep": 1,
+       "valid-values": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+       ]
+      },
+      {
+       "type": "00000023-0000-1000-8000-0026BB765291",
+       "iid": 9,
+       "perms": [
+        "pr"
+       ],
+       "format": "string",
+       "typeLabel": "name",
+       "value": "TV Salon"
+      },
+      {
+       "type": "000000E7-0000-1000-8000-0026BB765291",
+       "iid": 11,
+       "perms": [
+        "ev",
+        "pr",
+        "pw"
+       ],
+       "format": "uint32",
+       "typeLabel": "active-identifier",
+       "value": 0
+      },
+      {
+       "type": "000000E3-0000-1000-8000-0026BB765291",
+       "iid": 12,
+       "perms": [
+        "ev",
+        "pr",
+        "pw"
+       ],
+       "format": "string",
+       "typeLabel": "configured-name",
+       "value": "TV Salon"
+      },
+      {
+       "type": "000000E8-0000-1000-8000-0026BB765291",
+       "iid": 14,
+       "perms": [
+        "ev",
+        "pr"
+       ],
+       "format": "uint8",
+       "typeLabel": "sleep-discovery-mode",
+       "value": 1,
+       "minValue": 0,
+       "maxValue": 1,
+       "minStep": 1,
+       "valid-values": [
+        0,
+        1
+       ]
+      },
+      {
+       "type": "000000B0-0000-1000-8000-0026BB765291",
+       "iid": 10,
+       "perms": [
+        "ev",
+        "pr",
+        "pw"
+       ],
+       "format": "uint8",
+       "typeLabel": "active",
+       "value": 1,
+       "minValue": 0,
+       "maxValue": 1,
+       "minStep": 1,
+       "valid-values": [
+        0,
+        1
+       ]
+      }
+     ],
+     "serviceOriginalName": "TV Salon",
+     "primary": true
+    },
+    {
+     "type": "00000113-0000-1000-8000-0026BB765291",
+     "iid": 15,
+     "typeLabel": "speaker",
+     "characteristics": [
+      {
+       "type": "000000EA-0000-1000-8000-0026BB765291",
+       "iid": 19,
+       "perms": [
+        "pw"
+       ],
+       "format": "uint8",
+       "typeLabel": "volume-selector",
+       "minValue": 0,
+       "maxValue": 1,
+       "minStep": 1,
+       "valid-values": [
+        0,
+        1
+       ]
+      },
+      {
+       "type": "0000011A-0000-1000-8000-0026BB765291",
+       "iid": 16,
+       "perms": [
+        "ev",
+        "pr",
+        "pw"
+       ],
+       "format": "bool",
+       "typeLabel": "mute",
+       "value": 0
+      },
+      {
+       "type": "000000B0-0000-1000-8000-0026BB765291",
+       "iid": 17,
+       "perms": [
+        "ev",
+        "pr",
+        "pw"
+       ],
+       "format": "uint8",
+       "typeLabel": "active",
+       "value": 1,
+       "minValue": 0,
+       "maxValue": 1,
+       "minStep": 1,
+       "valid-values": [
+        0,
+        1
+       ]
+      },
+      {
+       "type": "000000E9-0000-1000-8000-0026BB765291",
+       "iid": 18,
+       "perms": [
+        "ev",
+        "pr"
+       ],
+       "format": "uint8",
+       "typeLabel": "volume-control-type",
+       "value": 3,
+       "minValue": 0,
+       "maxValue": 3,
+       "minStep": 1,
+       "valid-values": [
+        0,
+        1,
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "type": "000000A2-0000-1000-8000-0026BB765291",
+     "iid": 20,
+     "typeLabel": "protocol.information.service",
+     "characteristics": [
+      {
+       "type": "00000037-0000-1000-8000-0026BB765291",
+       "iid": 21,
+       "perms": [
+        "pr"
+       ],
+       "format": "string",
+       "typeLabel": "version",
+       "value": "1.1.0"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "aid": 3,
+   "services": [
+    {
+     "type": "0000003E-0000-1000-8000-0026BB765291",
+     "iid": 1,
+     "typeLabel": "accessory-information",
+     "serviceOriginalName": "Lumière zone canapé",
+     "characteristics": [
+      {
+       "type": "00000014-0000-1000-8000-0026BB765291",
+       "iid": 2,
+       "perms": [
+        "pw"
+       ],
+       "format": "bool",
+       "typeLabel": "identify"
+      },
+      {
+       "type": "00000020-0000-1000-8000-0026BB765291",
+       "iid": 3,
+       "perms": [
+        "pr"
+       ],
+       "format": "string",
+       "typeLabel": "manufacturer",
+       "value": "Acme <b>Corp</b>"
+      },
+      {
+       "type": "00000021-0000-1000-8000-0026BB765291",
+       "iid": 4,
+       "perms": [
+        "pr"
+       ],
+       "format": "string",
+       "typeLabel": "model",
+       "value": "M1"
+      },
+      {
+       "type": "00000023-0000-1000-8000-0026BB765291",
+       "iid": 5,
+       "perms": [
+        "pr"
+       ],
+       "format": "string",
+       "typeLabel": "name",
+       "value": "Lumière zone canapé"
+      },
+      {
+       "type": "00000030-0000-1000-8000-0026BB765291",
+       "iid": 6,
+       "perms": [
+        "pr"
+       ],
+       "format": "string",
+       "typeLabel": "serial-number",
+       "value": "123"
+      },
+      {
+       "type": "00000052-0000-1000-8000-0026BB765291",
+       "iid": 7,
+       "perms": [
+        "pr"
+       ],
+       "format": "string",
+       "typeLabel": "firmware.revision",
+       "value": "1.0"
+      }
+     ]
+    },
+    {
+     "type": "00000043-0000-1000-8000-0026BB765291",
+     "iid": 10,
+     "typeLabel": "lightbulb",
+     "characteristics": [
+      {
+       "type": "00000023-0000-1000-8000-0026BB765291",
+       "iid": 11,
+       "perms": [
+        "pr"
+       ],
+       "format": "string",
+       "typeLabel": "name",
+       "value": "Lumière zone canapé"
+      },
+      {
+       "type": "00000025-0000-1000-8000-0026BB765291",
+       "iid": 12,
+       "perms": [
+        "ev",
+        "pr",
+        "pw"
+       ],
+       "format": "bool",
+       "typeLabel": "on",
+       "value": 1
+      },
+      {
+       "type": "00000008-0000-1000-8000-0026BB765291",
+       "iid": 13,
+       "perms": [
+        "ev",
+        "pr",
+        "pw"
+       ],
+       "format": "int",
+       "typeLabel": "brightness",
+       "value": 80,
+       "minValue": 0,
+       "maxValue": 100,
+       "minStep": 1,
+       "unit": "percentage"
+      },
+      {
+       "type": "00000013-0000-1000-8000-0026BB765291",
+       "iid": 14,
+       "perms": [
+        "ev",
+        "pr",
+        "pw"
+       ],
+       "format": "float",
+       "typeLabel": "hue",
+       "value": 360,
+       "minValue": 0,
+       "maxValue": 360,
+       "minStep": 1,
+       "unit": "arcdegrees"
+      },
+      {
+       "type": "0000002F-0000-1000-8000-0026BB765291",
+       "iid": 15,
+       "perms": [
+        "ev",
+        "pr",
+        "pw"
+       ],
+       "format": "float",
+       "typeLabel": "saturation",
+       "value": 100,
+       "minValue": 0,
+       "maxValue": 100,
+       "minStep": 1,
+       "unit": "percentage"
+      },
+      {
+       "type": "000000CE-0000-1000-8000-0026BB765291",
+       "iid": 16,
+       "perms": [
+        "ev",
+        "pr",
+        "pw"
+       ],
+       "format": "uint32",
+       "typeLabel": "color-temperature",
+       "value": 300,
+       "minValue": 140,
+       "maxValue": 500,
+       "minStep": 1
+      }
+     ],
+     "serviceOriginalName": "Lumière zone canapé",
+     "primary": true
+    },
+    {
+     "type": "00000049-0000-1000-8000-0026BB765291",
+     "iid": 20,
+     "typeLabel": "switch",
+     "characteristics": [
+      {
+       "type": "000000E3-0000-1000-8000-0026BB765291",
+       "iid": 21,
+       "perms": [
+        "ev",
+        "pr",
+        "pw"
+       ],
+       "format": "string",
+       "typeLabel": "configured-name",
+       "value": "Lumière zone canapé Lumineux"
+      },
+      {
+       "type": "00000025-0000-1000-8000-0026BB765291",
+       "iid": 22,
+       "perms": [
+        "ev",
+        "pr",
+        "pw"
+       ],
+       "format": "bool",
+       "typeLabel": "on",
+       "value": 0
+      }
+     ]
+    },
+    {
+     "type": "00000049-0000-1000-8000-0026BB765291",
+     "iid": 30,
+     "typeLabel": "switch",
+     "characteristics": [
+      {
+       "type": "000000E3-0000-1000-8000-0026BB765291",
+       "iid": 31,
+       "perms": [
+        "ev",
+        "pr",
+        "pw"
+       ],
+       "format": "string",
+       "typeLabel": "configured-name",
+       "value": "Lumière zone canapé Veilleuse"
+      },
+      {
+       "type": "00000025-0000-1000-8000-0026BB765291",
+       "iid": 32,
+       "perms": [
+        "ev",
+        "pr",
+        "pw"
+       ],
+       "format": "bool",
+       "typeLabel": "on",
+       "value": 0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "aid": 4,
+   "services": [
+    {
+     "type": "0000003E-0000-1000-8000-0026BB765291",
+     "iid": 1,
+     "typeLabel": "accessory-information",
+     "serviceOriginalName": "Divers",
+     "characteristics": [
+      {
+       "type": "00000014-0000-1000-8000-0026BB765291",
+       "iid": 2,
+       "perms": [
+        "pw"
+       ],
+       "format": "bool",
+       "typeLabel": "identify"
+      },
+      {
+       "type": "00000020-0000-1000-8000-0026BB765291",
+       "iid": 3,
+       "perms": [
+        "pr"
+       ],
+       "format": "string",
+       "typeLabel": "manufacturer",
+       "value": "Acme <b>Corp</b>"
+      },
+      {
+       "type": "00000021-0000-1000-8000-0026BB765291",
+       "iid": 4,
+       "perms": [
+        "pr"
+       ],
+       "format": "string",
+       "typeLabel": "model",
+       "value": "M1"
+      },
+      {
+       "type": "00000023-0000-1000-8000-0026BB765291",
+       "iid": 5,
+       "perms": [
+        "pr"
+       ],
+       "format": "string",
+       "typeLabel": "name",
+       "value": "Divers"
+      },
+      {
+       "type": "00000030-0000-1000-8000-0026BB765291",
+       "iid": 6,
+       "perms": [
+        "pr"
+       ],
+       "format": "string",
+       "typeLabel": "serial-number",
+       "value": "123"
+      },
+      {
+       "type": "00000052-0000-1000-8000-0026BB765291",
+       "iid": 7,
+       "perms": [
+        "pr"
+       ],
+       "format": "string",
+       "typeLabel": "firmware.revision",
+       "value": "1.0"
+      }
+     ]
+    },
+    {
+     "type": "0000008C-0000-1000-8000-0026BB765291",
+     "iid": 40,
+     "typeLabel": "window-covering",
+     "characteristics": [
+      {
+       "type": "0000006D-0000-1000-8000-0026BB765291",
+       "iid": 41,
+       "perms": [
+        "ev",
+        "pr"
+       ],
+       "format": "uint8",
+       "typeLabel": "position.current",
+       "value": 50,
+       "minValue": 0,
+       "maxValue": 100,
+       "minStep": 1,
+       "unit": "percentage"
+      },
+      {
+       "type": "0000007C-0000-1000-8000-0026BB765291",
+       "iid": 42,
+       "perms": [
+        "ev",
+        "pr",
+        "pw"
+       ],
+       "format": "uint8",
+       "typeLabel": "position.target",
+       "value": 50,
+       "minValue": 0,
+       "maxValue": 100,
+       "minStep": 1,
+       "unit": "percentage"
+      },
+      {
+       "type": "00000072-0000-1000-8000-0026BB765291",
+       "iid": 43,
+       "perms": [
+        "ev",
+        "pr"
+       ],
+       "format": "uint8",
+       "typeLabel": "position.state",
+       "value": 2,
+       "minValue": 0,
+       "maxValue": 2,
+       "minStep": 1
+      }
+     ],
+     "serviceOriginalName": "Volet"
+    },
+    {
+     "type": "000000D0-0000-1000-8000-0026BB765291",
+     "iid": 50,
+     "typeLabel": "valve",
+     "characteristics": [
+      {
+       "type": "000000B0-0000-1000-8000-0026BB765291",
+       "iid": 51,
+       "perms": [
+        "ev",
+        "pr",
+        "pw"
+       ],
+       "format": "uint8",
+       "typeLabel": "active",
+       "value": 0,
+       "minValue": 0,
+       "maxValue": 1,
+       "minStep": 1
+      },
+      {
+       "type": "000000D5-0000-1000-8000-0026BB765291",
+       "iid": 52,
+       "perms": [
+        "ev",
+        "pr"
+       ],
+       "format": "uint8",
+       "typeLabel": "valve-type",
+       "value": 1,
+       "minValue": 0,
+       "maxValue": 3,
+       "minStep": 1
+      },
+      {
+       "type": "000000D3-0000-1000-8000-0026BB765291",
+       "iid": 53,
+       "perms": [
+        "ev",
+        "pr"
+       ],
+       "format": "uint32",
+       "typeLabel": "remaining-duration",
+       "value": 0,
+       "minValue": 0,
+       "maxValue": 3600,
+       "minStep": 1,
+       "unit": "seconds"
+      }
+     ],
+     "serviceOriginalName": "Arrosage"
+    },
+    {
+     "type": "00000049-0000-1000-8000-0026BB765291",
+     "iid": 60,
+     "typeLabel": "switch",
+     "characteristics": [
+      {
+       "type": "00000025-0000-1000-8000-0026BB765291",
+       "iid": 61,
+       "perms": [
+        "pr",
+        "pw"
+       ],
+       "format": "bool",
+       "typeLabel": "on",
+       "value": 1
+      },
+      {
+       "type": "00000099-0000-1000-8000-0026BB765291",
+       "iid": 62,
+       "perms": [
+        "pr"
+       ],
+       "format": "float",
+       "typeLabel": "Puissance <script>",
+       "value": 12.5,
+       "minValue": 0,
+       "maxValue": 3000
+      },
+      {
+       "type": "00000011-0000-1000-8000-0026BB765291",
+       "iid": 63,
+       "perms": [
+        "pr"
+       ],
+       "format": "float",
+       "typeLabel": "temperature.current",
+       "value": 21.5,
+       "minValue": -50,
+       "maxValue": 100,
+       "minStep": 0.1,
+       "unit": "celsius"
+      },
+      {
+       "type": "00000003-0000-1000-8000-0026BB765291",
+       "iid": 64,
+       "perms": [
+        "ev",
+        "pr"
+       ],
+       "format": "uint8",
+       "typeLabel": "occupancy-detected",
+       "value": 1,
+       "minValue": 0,
+       "maxValue": 1,
+       "minStep": 1
+      },
+      {
+       "type": "00000001-0000-1000-8000-0026BB765291",
+       "iid": 65,
+       "perms": [
+        "ev",
+        "pr",
+        "pw"
+       ],
+       "format": "uint8",
+       "typeLabel": "motion-detected",
+       "value": 50,
+       "minValue": 0,
+       "maxValue": 100,
+       "minStep": 50
+      },
+      {
+       "type": "00000118-0000-1000-8000-0026BB765291",
+       "iid": 66,
+       "perms": [
+        "pr",
+        "pw"
+       ],
+       "format": "tlv8",
+       "typeLabel": "setup-data",
+       "value": "AQ=="
+      },
+      {
+       "type": "000000E5-0000-1000-8000-0026BB765291",
+       "iid": 67,
+       "perms": [
+        "ev",
+        "pr",
+        "pw",
+        "hd"
+       ],
+       "format": "string",
+       "typeLabel": "display-order",
+       "value": "x",
+       "maxLen": 64
+      }
+     ],
+     "serviceOriginalName": "Prise"
+    }
+   ]
+  }
+ ]
+}
