@@ -1,0 +1,48 @@
+name: hapnames
+
+# Met à jour hapNames.class.php depuis la dernière version de @homebridge/hap-nodejs
+# et ouvre une PR si des services, caractéristiques ou valeurs HomeKit ont été ajoutés.
+# Les plugins récupèrent ensuite le fichier avec leur workflow sync-hklibs.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 4 1 * *'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.x
+      - name: Télécharger @homebridge/hap-nodejs
+        run: |
+          mkdir -p /tmp/hap && cd /tmp/hap
+          npm pack @homebridge/hap-nodejs --silent
+          tar xzf homebridge-hap-nodejs-*.tgz
+      - name: Générer la table
+        run: |
+          node tools/genHapNames.js /tmp/hap/package | tee /tmp/hapnames.txt
+          {
+            echo 'Mise à jour automatique depuis la dernière version de `@homebridge/hap-nodejs`.'
+            echo
+            sed 's/^/- /' /tmp/hapnames.txt
+            echo
+            echo 'Les entrées « À TRADUIRE » gardent leur nom anglais, hors de `__()` : la CI de traduction des plugins les ignore jusqu’à ce que leur libellé français soit mis dans `__("…", __FILE__)`.'
+          } > /tmp/body.md
+      - name: Ouvrir la PR
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: hapnames-auto
+          base: main
+          delete-branch: true
+          add-paths: hapNames.class.php
+          title: "Nouveaux noms HomeKit (hap-nodejs)"
+          body-path: /tmp/body.md
+          assignees: ${{ github.repository_owner }}
+          commit-message: "Mise à jour de hapNames.class.php depuis @homebridge/hap-nodejs"
