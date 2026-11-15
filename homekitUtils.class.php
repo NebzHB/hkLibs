@@ -111,91 +111,65 @@ class homekitUtils {
 		}
 	}
 	
+	/**
+	 * Teinte (0-360°) et saturation (0-100 %) HomeKit → couleur HTML (#rrggbb), luminosité à 100 %
+	 * (la luminosité est une caractéristique séparée). La teinte boucle (360 = 0 = rouge), la saturation est bornée.
+	 * Même calcul que homebridge-lib (hb-lib-tools Colour.hsvToRgb).
+	 */
 	public static function HStoHTML($hue, $saturation) {
-		$brightness=100;
-		
-		$hue /= 60;
-		$saturation /= 100;
-		$brightness /= 100;
-		
-		$i = floor($hue);
-		$f = $hue - $i;
-		
-		$p = $brightness * (1 - $saturation);
-		$q = $brightness * (1 - $saturation * $f);
-		$t = $brightness * (1 - $saturation * (1 - $f));
-		
-		switch ($i) {
-		case 0:
-		    $r = $brightness;
-		    $g = $t;
-		    $b = $p;
-		    break;
-		case 1:
-		    $r = $q;
-		    $g = $brightness;
-		    $b = $p;
-		    break;
-		case 2:
-		    $r = $p;
-		    $g = $brightness;
-		    $b = $t;
-		    break;
-		case 3:
-		    $r = $p;
-		    $g = $q;
-		    $b = $brightness;
-		    break;
-		case 4:
-		    $r = $t;
-		    $g = $p;
-		    $b = $brightness;
-		    break;
-		default:
-		    $r = $brightness;
-		    $g = $p;
-		    $b = $q;
-		    break;
-		}
-		
-		$r = round($r * 255);
-		$g = round($g * 255);
-		$b = round($b * 255);
-		
-		return sprintf("#%02x%02x%02x", $r, $g, $b);
+		$h = fmod(is_numeric($hue) ? floatval($hue) : 0, 360);
+		if ($h < 0) { $h += 360; }
+		$s = max(0, min(100, is_numeric($saturation) ? floatval($saturation) : 0)) / 100;
+		$channel = function ($n) use ($h, $s) {
+			$k = fmod($n + $h / 60, 6);
+			return 1 - $s * max(0, min($k, 4 - $k, 1));
+		};
+		return sprintf('#%02x%02x%02x', round($channel(5) * 255), round($channel(3) * 255), round($channel(1) * 255));
 	}
-	
-	public static function HTMLtoHS($html)  {
-		if($html[0] != "#") { $html="#".$html; }
-		list($r, $g, $b) = sscanf($html, "#%02x%02x%02x");	
-		$r /= 255.0;
-		$g /= 255.0;
-		$b /= 255.0;
-		
+
+	/**
+	 * Couleur HTML → [r, g, b] (0-255), ou null si invalide. Accepte « #rrggbb », « rrggbb », « #rgb », « rgb ».
+	 */
+	public static function HTMLtoRGB($html) {
+		$html = ltrim(trim((string) $html), '#');
+		if (strlen($html) == 3) { $html = $html[0] . $html[0] . $html[1] . $html[1] . $html[2] . $html[2]; }
+		if (!preg_match('/^[0-9a-f]{6}$/i', $html)) { return null; }
+		return array_map('hexdec', str_split($html, 2));
+	}
+
+	/**
+	 * Couleur HTML → [teinte 0-359, saturation 0-100, luminosité 0-100], en entiers comme HomeKit (pas de 1).
+	 * Le couple teinte/saturation retenu est celui qui redonne la couleur la plus proche avec HStoHTML
+	 * (au lieu d'arrondir chaque valeur séparément). Couleur invalide → blanc [0, 0, 100].
+	 */
+	public static function HTMLtoHS($html) {
+		$rgb = self::HTMLtoRGB($html);
+		if ($rgb === null) { return [0, 0, 100]; }
+		list($r, $g, $b) = array_map(function ($v) { return $v / 255; }, $rgb);
 		$max = max($r, $g, $b);
-		$min = min($r, $g, $b);
-		$delta = $max - $min;
-		
-		$brightness = $max;
-		$saturation = ($max != 0) ? ($delta / $max) : 0;
-		
-		if ($saturation == 0) {
-			$hue = 0;
+		$delta = $max - min($r, $g, $b);
+		if ($delta == 0) { return [0, 0, (int) round($max * 100)]; }
+		$s = $delta / $max * 100;
+		if ($max == $r) {
+			$h = fmod(($g - $b) / $delta + 6, 6);
+		} elseif ($max == $g) {
+			$h = ($b - $r) / $delta + 2;
 		} else {
-			if ($r == $max) {
-			    $hue = ($g - $b) / $delta;
-			} elseif ($g == $max) {
-			    $hue = 2 + ($b - $r) / $delta;
-			} else {
-			    $hue = 4 + ($r - $g) / $delta;
-			}
-			$hue *= 60;
-			if ($hue < 0) {
-			    $hue += 360;
+			$h = ($r - $g) / $delta + 4;
+		}
+		$h *= 60;
+		// couleur visée à luminosité 100 % (HStoHTML ne gère pas la luminosité)
+		$target = array_map(function ($v) use ($max) { return $v / $max * 255; }, [$r, $g, $b]);
+		$best = null;
+		foreach (array_unique([floor($h), ceil($h)]) as $hh) {
+			foreach (array_unique([floor($s), ceil($s)]) as $ss) {
+				$out = self::HTMLtoRGB(self::HStoHTML($hh, $ss));
+				$err = 0;
+				for ($i = 0; $i < 3; $i++) { $err += ($out[$i] - $target[$i]) ** 2; }
+				if ($best === null || $err < $best[0]) { $best = [$err, (int) fmod($hh, 360), (int) $ss]; }
 			}
 		}
-		
-		return array(round($hue), round($saturation * 100), round($brightness * 100));
+		return [$best[1], $best[2], (int) round($max * 100)];
 	}
 	/***************************Instance Methods************************/
 }
