@@ -12,6 +12,11 @@
  * Le commit de hkLibs copié est noté dans core/class/hkLibs.version.
  *
  * --check : ne copie rien, compare les fichiers du plugin à ce que donnerait la copie (code de sortie 1 si différent).
+ * --i18n-from <dossier d'un autre plugin> : cherche aussi les traductions manquantes dans le core/i18n de cet autre plugin.
+ *
+ * À la copie, les textes __() des fichiers de hkLibs déjà traduits ailleurs dans core/i18n (même texte français,
+ * sous un autre fichier, ou dans le plugin --i18n-from) sont repris pour le fichier copié : pas de nouvelle
+ * traduction DeepL quand du code passe d'un plugin à hkLibs.
  */
 if ($argc < 3) {
 	fwrite(STDERR, "Usage : php tools/install.php <dossier de hkLibs> <dossier du plugin> [--check]\n");
@@ -57,6 +62,51 @@ foreach ($files as $src) {
 		echo "copié core/class/" . basename($src) . "\n";
 	}
 }
+if (!$check) {
+	$from = null;
+	$i = array_search('--i18n-from', $argv);
+	if ($i !== false && isset($argv[$i + 1])) { $from = rtrim($argv[$i + 1], '/'); }
+	hkLibsTranslations($files, $plugin, $id, $from);
+}
+
+/** Reprend les traductions connues des textes __() des fichiers copiés. */
+function hkLibsTranslations($files, $plugin, $id, $from) {
+	foreach (glob($plugin . '/core/i18n/*.json') as $i18nFile) {
+		$raw = file_get_contents($i18nFile);
+		$i18n = json_decode($raw, true);
+		if (!is_array($i18n)) { continue; }
+		$known = [];
+		$sources = [$i18n];
+		if ($from && file_exists($from . '/core/i18n/' . basename($i18nFile))) {
+			$sources[] = json_decode(file_get_contents($from . '/core/i18n/' . basename($i18nFile)), true) ?: [];
+		}
+		foreach ($sources as $src) {
+			foreach ($src as $strings) {
+				if (!is_array($strings)) { continue; }
+				foreach ($strings as $fr => $tr) { if ($tr !== '' && !isset($known[$fr])) { $known[$fr] = $tr; } }
+			}
+		}
+		$added = 0;
+		foreach ($files as $f) {
+			$key = 'plugins/' . $id . '/core/class/' . basename($f);
+			preg_match_all('/__\(\s*(["\'])((?:\\\\.|(?!\1).)*)\1\s*,\s*__FILE__\s*\)/', file_get_contents($f), $m);
+			foreach ($m[2] as $k => $text) {
+				$text = stripcslashes($text);
+				if (isset($i18n[$key][$text]) && $i18n[$key][$text] !== '') { continue; }
+				if (!isset($known[$text])) { continue; }
+				$i18n[$key][$text] = $known[$text];
+				$added++;
+			}
+		}
+		if ($added) {
+			ksort($i18n);
+			$out = json_encode($i18n, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+			file_put_contents($i18nFile, $out . ((substr($raw, -1) === "\n") ? "\n" : ''));
+			echo "traductions reprises : $added dans " . basename($i18nFile) . "\n";
+		}
+	}
+}
+
 if (!$check) {
 	$sha = trim((string) @shell_exec('git -C ' . escapeshellarg($lib) . ' rev-parse HEAD 2>/dev/null'));
 	if ($sha !== '') {

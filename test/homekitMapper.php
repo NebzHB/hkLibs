@@ -15,6 +15,53 @@ function check($what, $got, $want) {
 function names($r) { return array_column($r['cmds'], 'name', 'logicalId'); }
 function byName($r, $name) { foreach ($r['cmds'] as $c) if ($c['name'] === $name) return $c; return null; }
 
+// préfixes de service : seulement quand une commande existe dans plusieurs services
+function c($t, $value = null) { return ['type' => $t, 'value' => $value]; }
+function svc($iid, $type, $chars, $extra = []) { return array_merge(['iid' => $iid, 'type' => $type, 'characteristics' => $chars], $extra); }
+$info = svc(1, '3E', [c('23', 'Mon accessoire'), c('14')]);
+// TV : téléviseur sans préfixe (premier type unique), haut-parleur préfixé par son type
+check('TV + haut-parleur', homekitMapper::servicePrefixes([
+	$info,
+	svc(8, 'D8', [c('23', 'TV'), c('B0'), c('E7')]),
+	svc(15, '113', [c('B0'), c('11A')]),
+]), [15 => 'Haut-parleur']);
+
+// accessoire à un seul service : rien à préfixer
+check('un seul service', homekitMapper::servicePrefixes([$info, svc(8, '43', [c('25'), c('8')])]), []);
+
+// multiprise sans nom propre : toutes les prises préfixées et numérotées
+check('multiprise sans nom', homekitMapper::servicePrefixes([
+	$info, svc(10, '47', [c('25')]), svc(20, '47', [c('25')]), svc(30, '47', [c('25')]),
+]), [10 => 'Prise 1', 20 => 'Prise 2', 30 => 'Prise 3']);
+
+// multiprise nommée : nom propre ; un nom identique à l'accessoire ne compte pas
+check('multiprise nommée', homekitMapper::servicePrefixes([
+	$info, svc(10, '47', [c('23', 'Bureau'), c('25')]), svc(20, '47', [c('23', 'Mon accessoire'), c('25')]),
+]), [10 => 'Bureau', 20 => 'Prise']);
+
+// service marqué primary : il garde les noms courts, même si son type se répète
+check('service primary', homekitMapper::servicePrefixes([
+	$info, svc(10, '47', [c('25')], ['primary' => true]), svc(20, '47', [c('25')]),
+]), [20 => 'Prise']);
+
+// sources d'entrée : Configured Name avant Name
+check('sources d\'entrée', homekitMapper::servicePrefixes([
+	$info,
+	svc(8, 'D8', [c('B0'), c('E3', 'TV')]),
+	svc(40, 'D9', [c('23', 'in1'), c('E3', 'HDMI 1'), c('E6')]),
+	svc(50, 'D9', [c('23', 'in2'), c('E3', 'HDMI 2'), c('E6')]),
+]), [40 => 'HDMI 1', 50 => 'HDMI 2']);
+
+// nom propre du service qui commence par le nom de l'accessoire : on ne garde que la fin
+$lum = svc(1, '3E', [c('23', 'Lumière zone canapé')]);
+check('préfixe sans le nom de l\'accessoire', homekitMapper::servicePrefixes([
+	$lum,
+	svc(10, '43', [c('23', 'Lumière zone canapé'), c('25')], ['primary' => true]),
+	svc(18, '49', [c('E3', 'Lumière zone canapé Lumineux'), c('25')]),
+	svc(23, '49', [c('E3', 'Lumière zone canapé Atténué'), c('25')]),
+]), [18 => 'Lumineux', 23 => 'Atténué']);
+
+
 $desc = json_decode(file_get_contents(__DIR__ . '/fixtures/synthetic.json'), true);
 $acc = [];
 foreach ($desc['accessories'] as $a) $acc[$a['aid']] = $a;
