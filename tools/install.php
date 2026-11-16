@@ -8,6 +8,7 @@
  * dans le même processus PHP sans conflit de classe. Le plugin utilise les classes avec
  *   require_once __DIR__ . '/homekitUtils.class.php';
  *   use monPlugin\hkLibs\homekitUtils;
+ * Les *.js de js/ (utilitaires des démons) sont copiés tels quels dans <plugin>/resources/utils/.
  * Les fichiers des libellés __() gardent leur chemin dans le plugin : la CI de traduction du plugin les traduit.
  * Le commit de hkLibs copié est noté dans core/class/hkLibs.version.
  *
@@ -62,6 +63,24 @@ foreach ($files as $src) {
 		echo "copié core/class/" . basename($src) . "\n";
 	}
 }
+// démons : *.js de js/ copiés tels quels dans resources/utils/
+foreach (glob($lib . '/js/*.js') ?: [] as $src) {
+	$dest = $plugin . '/resources/utils/' . basename($src);
+	$want = file_get_contents($src);
+	if ($check) {
+		if (!file_exists($dest) || file_get_contents($dest) !== $want) {
+			echo "::error file=resources/utils/" . basename($src) . "::diffère de NebzHB/hkLibs : modifiez le fichier dans hkLibs puis lancez le workflow sync-hklibs\n";
+			$bad++;
+		} else {
+			echo "ok   resources/utils/" . basename($src) . "\n";
+		}
+	} else {
+		@mkdir(dirname($dest), 0775, true);
+		file_put_contents($dest, $want);
+		echo "copié resources/utils/" . basename($src) . "\n";
+	}
+}
+
 if (!$check) {
 	$from = null;
 	$i = array_search('--i18n-from', $argv);

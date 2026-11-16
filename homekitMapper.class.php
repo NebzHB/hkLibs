@@ -37,6 +37,24 @@ class homekitMapper {
 		return mb_substr($name, 0, 120);
 	}
 
+	/**
+	 * Nom tenant dans la colonne name du cœur (varchar(127), coupé en octets par setName) : on nettoie comme le cœur,
+	 * puis on raccourcit le début sans couper un caractère accentué et en gardant la fin « (Info) », « (Allumé) »...
+	 */
+	public static function fitName($name, $max = 127) {
+		$name = (string) $name;
+		if (function_exists('cleanComponanteName')) $name = cleanComponanteName($name);
+		$name = trim($name);
+		if (strlen($name) <= $max) return $name;
+		$head = $name;
+		$suffix = '';
+		if (preg_match('/^(.*\S)(\s\([^()]*\))$/u', $name, $m) && strlen($m[2]) < $max / 2) {
+			$head = $m[1];
+			$suffix = $m[2];
+		}
+		return rtrim(mb_strcut($head, 0, $max - strlen($suffix), 'UTF-8')) . $suffix;
+	}
+
 	/** Commande « Rafraichir » (noms historiques de hkControl si $legacy). */
 	public static function refreshCmd($legacy = false) {
 		return ['name' => ($legacy) ? 'Rafraichir' : __('Rafraichir', __FILE__), 'type' => 'action', 'subtype' => 'other', 'display' => ['generic_type' => 'DONT'], 'isVisible' => 1, 'logicalId' => 'refresh'];

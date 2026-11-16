@@ -7,6 +7,9 @@ Code PHP commun aux plugins Jeedom **hkControl** et **reverseHomebridge** (HomeK
 | `homekitUtils.class.php` | Conversions de valeurs : unités, UUID, bornes min/max/pas, couleurs HomeKit (teinte/saturation) ↔ HTML |
 | `homekitEnums.class.php` | Libellés techniques des services et caractéristiques, valeurs possibles |
 | `homekitMapper.class.php` | Description HomeKit d'un accessoire → commandes Jeedom (noms traduits, préfixes de service, couleur, listes) |
+| `homekitEqLogicTrait.class.php` | Trait des équipements : `createCmd`, `cmdNameExist`, `nameExists` |
+| `homekitCmdTrait.class.php` | Trait des commandes : `setName` qui coupe proprement à 127 octets |
+| `js/logger.js`, `js/ipList.js` | Utilitaires des démons Node.js (copiés dans `resources/utils/`) |
 | `hapNames.class.php` | Noms traduits des services, caractéristiques et valeurs possibles, par UUID (généré depuis HAP-NodeJS) |
 
 Les fichiers sont **copiés** dans `core/class/` de chaque plugin (les archives du market n'incluent pas les sous-modules git).
