@@ -1,0 +1,2638 @@
+{
+    "nouveaux noms": {
+        "2": {
+            "name": "TV Salon",
+            "cmds": [
+                {
+                    "name": "Identifier",
+                    "type": "action",
+                    "subtype": "other",
+                    "isVisible": 1,
+                    "logicalId": "identify",
+                    "configuration": {
+                        "aidiid": "2.2",
+                        "service": "accessory-information",
+                        "serviceType": "0000003E-0000-1000-8000-0026BB765291"
+                    }
+                },
+                {
+                    "name": "Touche de télécommande",
+                    "logicalId": "8_000000D8-0000-1000-8000-0026BB765291_000000E1-0000-1000-8000-0026BB765291_ACTION",
+                    "configuration": {
+                        "aidiid": "2.13",
+                        "service": "television",
+                        "serviceOriginalName": "TV Salon",
+                        "serviceType": "000000D8-0000-1000-8000-0026BB765291",
+                        "serviceIID": 8,
+                        "hkFormat": "uint8",
+                        "maxValue": 16,
+                        "minValue": 0,
+                        "step": 1,
+                        "valid-values": [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4,
+                            5,
+                            6,
+                            7,
+                            8,
+                            9,
+                            10,
+                            11,
+                            12,
+                            13,
+                            14,
+                            15,
+                            16
+                        ],
+                        "listValue": "0|Retour rapide;1|Avance rapide;2|Piste suivante;3|Piste précédente;4|Flèche haut;5|Flèche bas;6|Flèche gauche;7|Flèche droite;8|Sélection;9|Retour;10|Quitter;11|Lecture/Pause;15|Infos"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "action",
+                    "subtype": "select"
+                },
+                {
+                    "name": "Identifiant actif (Info)",
+                    "logicalId": "8_000000D8-0000-1000-8000-0026BB765291_000000E7-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "2.11",
+                        "service": "television",
+                        "serviceOriginalName": "TV Salon",
+                        "serviceType": "000000D8-0000-1000-8000-0026BB765291",
+                        "serviceIID": 8,
+                        "hkFormat": "uint32"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "numeric",
+                    "value": 0
+                },
+                {
+                    "name": "Identifiant actif (Action)",
+                    "logicalId": "8_000000D8-0000-1000-8000-0026BB765291_000000E7-0000-1000-8000-0026BB765291_ACTION",
+                    "configuration": {
+                        "aidiid": "2.11",
+                        "service": "television",
+                        "serviceOriginalName": "TV Salon",
+                        "serviceType": "000000D8-0000-1000-8000-0026BB765291",
+                        "serviceIID": 8,
+                        "hkFormat": "uint32"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "8_000000D8-0000-1000-8000-0026BB765291_000000E7-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "slider"
+                },
+                {
+                    "name": "Nom configuré (Info)",
+                    "logicalId": "8_000000D8-0000-1000-8000-0026BB765291_000000E3-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "2.12",
+                        "service": "television",
+                        "serviceOriginalName": "TV Salon",
+                        "serviceType": "000000D8-0000-1000-8000-0026BB765291",
+                        "serviceIID": 8,
+                        "hkFormat": "string"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "string",
+                    "value": "TV Salon"
+                },
+                {
+                    "name": "Nom configuré (Action)",
+                    "logicalId": "8_000000D8-0000-1000-8000-0026BB765291_000000E3-0000-1000-8000-0026BB765291_ACTION",
+                    "configuration": {
+                        "aidiid": "2.12",
+                        "service": "television",
+                        "serviceOriginalName": "TV Salon",
+                        "serviceType": "000000D8-0000-1000-8000-0026BB765291",
+                        "serviceIID": 8,
+                        "hkFormat": "string"
+                    },
+                    "display": {
+                        "title_disable": 1,
+                        "message_disable": 0,
+                        "title_placeholder": "Non Utilisé",
+                        "message_placeholder": "Chaîne à envoyer"
+                    },
+                    "isVisible": 1,
+                    "value": "8_000000D8-0000-1000-8000-0026BB765291_000000E3-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "message"
+                },
+                {
+                    "name": "Mode de découverte en veille",
+                    "logicalId": "8_000000D8-0000-1000-8000-0026BB765291_000000E8-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "2.14",
+                        "service": "television",
+                        "serviceOriginalName": "TV Salon",
+                        "serviceType": "000000D8-0000-1000-8000-0026BB765291",
+                        "serviceIID": 8,
+                        "hkFormat": "uint8",
+                        "maxValue": 1,
+                        "minValue": 0,
+                        "step": 1,
+                        "valid-values": [
+                            0,
+                            1
+                        ],
+                        "possibleValues": "0=Non détectable<br/>1=Toujours détectable"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "numeric",
+                    "value": 1
+                },
+                {
+                    "name": "Actif (Info)",
+                    "logicalId": "8_000000D8-0000-1000-8000-0026BB765291_000000B0-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "2.10",
+                        "service": "television",
+                        "serviceOriginalName": "TV Salon",
+                        "serviceType": "000000D8-0000-1000-8000-0026BB765291",
+                        "serviceIID": 8,
+                        "hkFormat": "uint8",
+                        "maxValue": 1,
+                        "minValue": 0,
+                        "step": 1,
+                        "valid-values": [
+                            0,
+                            1
+                        ],
+                        "possibleValues": "0=Inactif<br/>1=Actif"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "binary",
+                    "value": true
+                },
+                {
+                    "name": "Actif (Activer)",
+                    "logicalId": "8_000000D8-0000-1000-8000-0026BB765291_000000B0-0000-1000-8000-0026BB765291_Active",
+                    "configuration": {
+                        "aidiid": "2.10",
+                        "service": "television",
+                        "serviceOriginalName": "TV Salon",
+                        "serviceType": "000000D8-0000-1000-8000-0026BB765291",
+                        "serviceIID": 8,
+                        "hkFormat": "uint8",
+                        "maxValue": 1,
+                        "minValue": 0,
+                        "step": 1,
+                        "valid-values": [
+                            0,
+                            1
+                        ],
+                        "valueToSet": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "8_000000D8-0000-1000-8000-0026BB765291_000000B0-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "Actif (Désactiver)",
+                    "logicalId": "8_000000D8-0000-1000-8000-0026BB765291_000000B0-0000-1000-8000-0026BB765291_Active_Inactive",
+                    "configuration": {
+                        "aidiid": "2.10",
+                        "service": "television",
+                        "serviceOriginalName": "TV Salon",
+                        "serviceType": "000000D8-0000-1000-8000-0026BB765291",
+                        "serviceIID": 8,
+                        "hkFormat": "uint8",
+                        "maxValue": 1,
+                        "minValue": 0,
+                        "step": 1,
+                        "valid-values": [
+                            0,
+                            1
+                        ],
+                        "valueToSet": 0
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "8_000000D8-0000-1000-8000-0026BB765291_000000B0-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "Haut-parleur Sélecteur de volume",
+                    "logicalId": "15_00000113-0000-1000-8000-0026BB765291_000000EA-0000-1000-8000-0026BB765291_ACTION",
+                    "configuration": {
+                        "aidiid": "2.19",
+                        "service": "speaker",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000113-0000-1000-8000-0026BB765291",
+                        "serviceIID": 15,
+                        "hkFormat": "uint8",
+                        "maxValue": 1,
+                        "minValue": 0,
+                        "step": 1,
+                        "valid-values": [
+                            0,
+                            1
+                        ],
+                        "listValue": "0|Augmenter;1|Diminuer"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "action",
+                    "subtype": "select"
+                },
+                {
+                    "name": "Haut-parleur Muet (Info)",
+                    "logicalId": "15_00000113-0000-1000-8000-0026BB765291_0000011A-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "2.16",
+                        "service": "speaker",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000113-0000-1000-8000-0026BB765291",
+                        "serviceIID": 15,
+                        "hkFormat": "bool"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "binary",
+                    "value": false
+                },
+                {
+                    "name": "Haut-parleur Muet (On)",
+                    "logicalId": "15_00000113-0000-1000-8000-0026BB765291_0000011A-0000-1000-8000-0026BB765291_ON",
+                    "configuration": {
+                        "aidiid": "2.16",
+                        "service": "speaker",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000113-0000-1000-8000-0026BB765291",
+                        "serviceIID": 15,
+                        "hkFormat": "bool",
+                        "valueToSet": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "15_00000113-0000-1000-8000-0026BB765291_0000011A-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "Haut-parleur Muet (Off)",
+                    "logicalId": "15_00000113-0000-1000-8000-0026BB765291_0000011A-0000-1000-8000-0026BB765291_ON_OFF",
+                    "configuration": {
+                        "aidiid": "2.16",
+                        "service": "speaker",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000113-0000-1000-8000-0026BB765291",
+                        "serviceIID": 15,
+                        "hkFormat": "bool",
+                        "valueToSet": 0
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "15_00000113-0000-1000-8000-0026BB765291_0000011A-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "Haut-parleur Actif (Info)",
+                    "logicalId": "15_00000113-0000-1000-8000-0026BB765291_000000B0-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "2.17",
+                        "service": "speaker",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000113-0000-1000-8000-0026BB765291",
+                        "serviceIID": 15,
+                        "hkFormat": "uint8",
+                        "maxValue": 1,
+                        "minValue": 0,
+                        "step": 1,
+                        "valid-values": [
+                            0,
+                            1
+                        ],
+                        "possibleValues": "0=Inactif<br/>1=Actif"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "binary",
+                    "value": true
+                },
+                {
+                    "name": "Haut-parleur Actif (Activer)",
+                    "logicalId": "15_00000113-0000-1000-8000-0026BB765291_000000B0-0000-1000-8000-0026BB765291_Active",
+                    "configuration": {
+                        "aidiid": "2.17",
+                        "service": "speaker",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000113-0000-1000-8000-0026BB765291",
+                        "serviceIID": 15,
+                        "hkFormat": "uint8",
+                        "maxValue": 1,
+                        "minValue": 0,
+                        "step": 1,
+                        "valid-values": [
+                            0,
+                            1
+                        ],
+                        "valueToSet": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "15_00000113-0000-1000-8000-0026BB765291_000000B0-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "Haut-parleur Actif (Désactiver)",
+                    "logicalId": "15_00000113-0000-1000-8000-0026BB765291_000000B0-0000-1000-8000-0026BB765291_Active_Inactive",
+                    "configuration": {
+                        "aidiid": "2.17",
+                        "service": "speaker",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000113-0000-1000-8000-0026BB765291",
+                        "serviceIID": 15,
+                        "hkFormat": "uint8",
+                        "maxValue": 1,
+                        "minValue": 0,
+                        "step": 1,
+                        "valid-values": [
+                            0,
+                            1
+                        ],
+                        "valueToSet": 0
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "15_00000113-0000-1000-8000-0026BB765291_000000B0-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "Haut-parleur Type de contrôle du volume",
+                    "logicalId": "15_00000113-0000-1000-8000-0026BB765291_000000E9-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "2.18",
+                        "service": "speaker",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000113-0000-1000-8000-0026BB765291",
+                        "serviceIID": 15,
+                        "hkFormat": "uint8",
+                        "maxValue": 3,
+                        "minValue": 0,
+                        "step": 1,
+                        "valid-values": [
+                            0,
+                            1,
+                            2,
+                            3
+                        ],
+                        "possibleValues": "0=Aucun<br/>1=Relatif<br/>2=Relatif avec valeur actuelle<br/>3=Absolu"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "numeric",
+                    "value": 3
+                }
+            ],
+            "conf": [
+                [
+                    "manufacturer",
+                    "Acme Corp"
+                ],
+                [
+                    "model",
+                    "M1"
+                ],
+                [
+                    "serial-number",
+                    "123"
+                ],
+                [
+                    "firmware.revision",
+                    "1.0"
+                ]
+            ]
+        },
+        "3": {
+            "name": "Lumière zone canapé",
+            "cmds": [
+                {
+                    "name": "Identifier",
+                    "type": "action",
+                    "subtype": "other",
+                    "isVisible": 1,
+                    "logicalId": "identify",
+                    "configuration": {
+                        "aidiid": "3.2",
+                        "service": "accessory-information",
+                        "serviceType": "0000003E-0000-1000-8000-0026BB765291"
+                    }
+                },
+                {
+                    "name": "État (Info)",
+                    "logicalId": "10_00000043-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "3.12",
+                        "service": "lightbulb",
+                        "serviceOriginalName": "Lumière zone canapé",
+                        "serviceType": "00000043-0000-1000-8000-0026BB765291",
+                        "serviceIID": 10,
+                        "hkFormat": "bool"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "binary",
+                    "value": true
+                },
+                {
+                    "name": "État (Allumé)",
+                    "logicalId": "10_00000043-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_ON",
+                    "configuration": {
+                        "aidiid": "3.12",
+                        "service": "lightbulb",
+                        "serviceOriginalName": "Lumière zone canapé",
+                        "serviceType": "00000043-0000-1000-8000-0026BB765291",
+                        "serviceIID": 10,
+                        "hkFormat": "bool",
+                        "valueToSet": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "10_00000043-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "État (Éteint)",
+                    "logicalId": "10_00000043-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_ON_OFF",
+                    "configuration": {
+                        "aidiid": "3.12",
+                        "service": "lightbulb",
+                        "serviceOriginalName": "Lumière zone canapé",
+                        "serviceType": "00000043-0000-1000-8000-0026BB765291",
+                        "serviceIID": 10,
+                        "hkFormat": "bool",
+                        "valueToSet": 0
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "10_00000043-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "Luminosité (Info)",
+                    "logicalId": "10_00000043-0000-1000-8000-0026BB765291_00000008-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "3.13",
+                        "service": "lightbulb",
+                        "serviceOriginalName": "Lumière zone canapé",
+                        "serviceType": "00000043-0000-1000-8000-0026BB765291",
+                        "serviceIID": 10,
+                        "hkFormat": "int",
+                        "maxValue": 100,
+                        "minValue": 0,
+                        "step": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "unite": "%",
+                    "type": "info",
+                    "subtype": "numeric",
+                    "value": 80
+                },
+                {
+                    "name": "Luminosité (Action)",
+                    "logicalId": "10_00000043-0000-1000-8000-0026BB765291_00000008-0000-1000-8000-0026BB765291_ACTION",
+                    "configuration": {
+                        "aidiid": "3.13",
+                        "service": "lightbulb",
+                        "serviceOriginalName": "Lumière zone canapé",
+                        "serviceType": "00000043-0000-1000-8000-0026BB765291",
+                        "serviceIID": 10,
+                        "hkFormat": "int",
+                        "maxValue": 100,
+                        "minValue": 0,
+                        "step": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "unite": "%",
+                    "value": "10_00000043-0000-1000-8000-0026BB765291_00000008-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "slider"
+                },
+                {
+                    "name": "Couleur (Info)",
+                    "logicalId": "10_00000043-0000-1000-8000-0026BB765291_00000013-0000-1000-8000-0026BB765291_0000002F-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "3.14|3.15",
+                        "service": "lightbulb",
+                        "serviceOriginalName": "Lumière zone canapé",
+                        "serviceType": "00000043-0000-1000-8000-0026BB765291",
+                        "serviceIID": 10,
+                        "hkFormat": "hue-saturation"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "unite": "%",
+                    "type": "info",
+                    "subtype": "string",
+                    "value": "#ff0000"
+                },
+                {
+                    "name": "Couleur (Action)",
+                    "logicalId": "10_00000043-0000-1000-8000-0026BB765291_00000013-0000-1000-8000-0026BB765291_0000002F-0000-1000-8000-0026BB765291_ACTION",
+                    "configuration": {
+                        "aidiid": "3.14|3.15",
+                        "service": "lightbulb",
+                        "serviceOriginalName": "Lumière zone canapé",
+                        "serviceType": "00000043-0000-1000-8000-0026BB765291",
+                        "serviceIID": 10,
+                        "hkFormat": "hue-saturation",
+                        "maxLen": 7
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "unite": "%",
+                    "value": "10_00000043-0000-1000-8000-0026BB765291_00000013-0000-1000-8000-0026BB765291_0000002F-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "color"
+                },
+                {
+                    "name": "Température de couleur (Info)",
+                    "logicalId": "10_00000043-0000-1000-8000-0026BB765291_000000CE-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "3.16",
+                        "service": "lightbulb",
+                        "serviceOriginalName": "Lumière zone canapé",
+                        "serviceType": "00000043-0000-1000-8000-0026BB765291",
+                        "serviceIID": 10,
+                        "hkFormat": "uint32",
+                        "maxValue": 500,
+                        "minValue": 140,
+                        "step": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "numeric",
+                    "value": 300
+                },
+                {
+                    "name": "Température de couleur (Action)",
+                    "logicalId": "10_00000043-0000-1000-8000-0026BB765291_000000CE-0000-1000-8000-0026BB765291_ACTION",
+                    "configuration": {
+                        "aidiid": "3.16",
+                        "service": "lightbulb",
+                        "serviceOriginalName": "Lumière zone canapé",
+                        "serviceType": "00000043-0000-1000-8000-0026BB765291",
+                        "serviceIID": 10,
+                        "hkFormat": "uint32",
+                        "maxValue": 500,
+                        "minValue": 140,
+                        "step": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "10_00000043-0000-1000-8000-0026BB765291_000000CE-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "slider"
+                },
+                {
+                    "name": "Lumineux Nom configuré (Info)",
+                    "logicalId": "20_00000049-0000-1000-8000-0026BB765291_000000E3-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "3.21",
+                        "service": "switch",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 20,
+                        "hkFormat": "string"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "string",
+                    "value": "Lumière zone canapé Lumineux"
+                },
+                {
+                    "name": "Lumineux Nom configuré (Action)",
+                    "logicalId": "20_00000049-0000-1000-8000-0026BB765291_000000E3-0000-1000-8000-0026BB765291_ACTION",
+                    "configuration": {
+                        "aidiid": "3.21",
+                        "service": "switch",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 20,
+                        "hkFormat": "string"
+                    },
+                    "display": {
+                        "title_disable": 1,
+                        "message_disable": 0,
+                        "title_placeholder": "Non Utilisé",
+                        "message_placeholder": "Chaîne à envoyer"
+                    },
+                    "isVisible": 1,
+                    "value": "20_00000049-0000-1000-8000-0026BB765291_000000E3-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "message"
+                },
+                {
+                    "name": "Lumineux État (Info)",
+                    "logicalId": "20_00000049-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "3.22",
+                        "service": "switch",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 20,
+                        "hkFormat": "bool"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "binary",
+                    "value": false
+                },
+                {
+                    "name": "Lumineux État (Allumé)",
+                    "logicalId": "20_00000049-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_ON",
+                    "configuration": {
+                        "aidiid": "3.22",
+                        "service": "switch",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 20,
+                        "hkFormat": "bool",
+                        "valueToSet": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "20_00000049-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "Lumineux État (Éteint)",
+                    "logicalId": "20_00000049-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_ON_OFF",
+                    "configuration": {
+                        "aidiid": "3.22",
+                        "service": "switch",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 20,
+                        "hkFormat": "bool",
+                        "valueToSet": 0
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "20_00000049-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "Veilleuse Nom configuré (Info)",
+                    "logicalId": "30_00000049-0000-1000-8000-0026BB765291_000000E3-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "3.31",
+                        "service": "switch",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 30,
+                        "hkFormat": "string"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "string",
+                    "value": "Lumière zone canapé Veilleuse"
+                },
+                {
+                    "name": "Veilleuse Nom configuré (Action)",
+                    "logicalId": "30_00000049-0000-1000-8000-0026BB765291_000000E3-0000-1000-8000-0026BB765291_ACTION",
+                    "configuration": {
+                        "aidiid": "3.31",
+                        "service": "switch",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 30,
+                        "hkFormat": "string"
+                    },
+                    "display": {
+                        "title_disable": 1,
+                        "message_disable": 0,
+                        "title_placeholder": "Non Utilisé",
+                        "message_placeholder": "Chaîne à envoyer"
+                    },
+                    "isVisible": 1,
+                    "value": "30_00000049-0000-1000-8000-0026BB765291_000000E3-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "message"
+                },
+                {
+                    "name": "Veilleuse État (Info)",
+                    "logicalId": "30_00000049-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "3.32",
+                        "service": "switch",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 30,
+                        "hkFormat": "bool"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "binary",
+                    "value": false
+                },
+                {
+                    "name": "Veilleuse État (Allumé)",
+                    "logicalId": "30_00000049-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_ON",
+                    "configuration": {
+                        "aidiid": "3.32",
+                        "service": "switch",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 30,
+                        "hkFormat": "bool",
+                        "valueToSet": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "30_00000049-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "Veilleuse État (Éteint)",
+                    "logicalId": "30_00000049-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_ON_OFF",
+                    "configuration": {
+                        "aidiid": "3.32",
+                        "service": "switch",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 30,
+                        "hkFormat": "bool",
+                        "valueToSet": 0
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "30_00000049-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                }
+            ],
+            "conf": [
+                [
+                    "manufacturer",
+                    "Acme Corp"
+                ],
+                [
+                    "model",
+                    "M1"
+                ],
+                [
+                    "serial-number",
+                    "123"
+                ],
+                [
+                    "firmware.revision",
+                    "1.0"
+                ]
+            ]
+        },
+        "4": {
+            "name": "Divers",
+            "cmds": [
+                {
+                    "name": "Identifier",
+                    "type": "action",
+                    "subtype": "other",
+                    "isVisible": 1,
+                    "logicalId": "identify",
+                    "configuration": {
+                        "aidiid": "4.2",
+                        "service": "accessory-information",
+                        "serviceType": "0000003E-0000-1000-8000-0026BB765291"
+                    }
+                },
+                {
+                    "name": "Position actuelle",
+                    "logicalId": "40_0000008C-0000-1000-8000-0026BB765291_0000006D-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "4.41",
+                        "service": "window-covering",
+                        "serviceOriginalName": "Volet",
+                        "serviceType": "0000008C-0000-1000-8000-0026BB765291",
+                        "serviceIID": 40,
+                        "hkFormat": "uint8",
+                        "maxValue": 100,
+                        "minValue": 0,
+                        "step": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "unite": "%",
+                    "type": "info",
+                    "subtype": "numeric",
+                    "value": 50
+                },
+                {
+                    "name": "Position cible (Info)",
+                    "logicalId": "40_0000008C-0000-1000-8000-0026BB765291_0000007C-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "4.42",
+                        "service": "window-covering",
+                        "serviceOriginalName": "Volet",
+                        "serviceType": "0000008C-0000-1000-8000-0026BB765291",
+                        "serviceIID": 40,
+                        "hkFormat": "uint8",
+                        "maxValue": 100,
+                        "minValue": 0,
+                        "step": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "unite": "%",
+                    "type": "info",
+                    "subtype": "numeric",
+                    "value": 50
+                },
+                {
+                    "name": "Position cible (Action)",
+                    "logicalId": "40_0000008C-0000-1000-8000-0026BB765291_0000007C-0000-1000-8000-0026BB765291_ACTION",
+                    "configuration": {
+                        "aidiid": "4.42",
+                        "service": "window-covering",
+                        "serviceOriginalName": "Volet",
+                        "serviceType": "0000008C-0000-1000-8000-0026BB765291",
+                        "serviceIID": 40,
+                        "hkFormat": "uint8",
+                        "maxValue": 100,
+                        "minValue": 0,
+                        "step": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "unite": "%",
+                    "value": "40_0000008C-0000-1000-8000-0026BB765291_0000007C-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "slider"
+                },
+                {
+                    "name": "État de la position",
+                    "logicalId": "40_0000008C-0000-1000-8000-0026BB765291_00000072-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "4.43",
+                        "service": "window-covering",
+                        "serviceOriginalName": "Volet",
+                        "serviceType": "0000008C-0000-1000-8000-0026BB765291",
+                        "serviceIID": 40,
+                        "hkFormat": "uint8",
+                        "maxValue": 2,
+                        "minValue": 0,
+                        "step": 1,
+                        "possibleValues": "0=En fermeture<br/>1=En ouverture<br/>2=Arrêté"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "numeric",
+                    "value": 2
+                },
+                {
+                    "name": "Actif (Info)",
+                    "logicalId": "50_000000D0-0000-1000-8000-0026BB765291_000000B0-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "4.51",
+                        "service": "valve",
+                        "serviceOriginalName": "Arrosage",
+                        "serviceType": "000000D0-0000-1000-8000-0026BB765291",
+                        "serviceIID": 50,
+                        "hkFormat": "uint8",
+                        "maxValue": 1,
+                        "minValue": 0,
+                        "step": 1,
+                        "possibleValues": "0=Inactif<br/>1=Actif"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "binary",
+                    "value": false
+                },
+                {
+                    "name": "Actif (Activer)",
+                    "logicalId": "50_000000D0-0000-1000-8000-0026BB765291_000000B0-0000-1000-8000-0026BB765291_Active",
+                    "configuration": {
+                        "aidiid": "4.51",
+                        "service": "valve",
+                        "serviceOriginalName": "Arrosage",
+                        "serviceType": "000000D0-0000-1000-8000-0026BB765291",
+                        "serviceIID": 50,
+                        "hkFormat": "uint8",
+                        "maxValue": 1,
+                        "minValue": 0,
+                        "step": 1,
+                        "valueToSet": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "50_000000D0-0000-1000-8000-0026BB765291_000000B0-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "Actif (Désactiver)",
+                    "logicalId": "50_000000D0-0000-1000-8000-0026BB765291_000000B0-0000-1000-8000-0026BB765291_Active_Inactive",
+                    "configuration": {
+                        "aidiid": "4.51",
+                        "service": "valve",
+                        "serviceOriginalName": "Arrosage",
+                        "serviceType": "000000D0-0000-1000-8000-0026BB765291",
+                        "serviceIID": 50,
+                        "hkFormat": "uint8",
+                        "maxValue": 1,
+                        "minValue": 0,
+                        "step": 1,
+                        "valueToSet": 0
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "50_000000D0-0000-1000-8000-0026BB765291_000000B0-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "Type de vanne",
+                    "logicalId": "50_000000D0-0000-1000-8000-0026BB765291_000000D5-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "4.52",
+                        "service": "valve",
+                        "serviceOriginalName": "Arrosage",
+                        "serviceType": "000000D0-0000-1000-8000-0026BB765291",
+                        "serviceIID": 50,
+                        "hkFormat": "uint8",
+                        "maxValue": 3,
+                        "minValue": 0,
+                        "step": 1,
+                        "possibleValues": "0=Vanne<br/>1=Arrosage<br/>2=Douche<br/>3=Robinet"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "numeric",
+                    "value": 1
+                },
+                {
+                    "name": "Durée définie",
+                    "logicalId": "50_000000D0-0000-1000-8000-0026BB765291_000000D3-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "4.53",
+                        "service": "valve",
+                        "serviceOriginalName": "Arrosage",
+                        "serviceType": "000000D0-0000-1000-8000-0026BB765291",
+                        "serviceIID": 50,
+                        "hkFormat": "uint32",
+                        "maxValue": 3600,
+                        "minValue": 0,
+                        "step": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "unite": "s",
+                    "type": "info",
+                    "subtype": "numeric",
+                    "value": 0
+                },
+                {
+                    "name": "État (Info relue)",
+                    "logicalId": "60_00000049-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_MANUALINFO",
+                    "configuration": {
+                        "aidiid": "4.61",
+                        "service": "switch",
+                        "serviceOriginalName": "Prise",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 60,
+                        "hkFormat": "bool"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "binary",
+                    "value": true
+                },
+                {
+                    "name": "État (Allumé)",
+                    "logicalId": "60_00000049-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_ON",
+                    "configuration": {
+                        "aidiid": "4.61",
+                        "service": "switch",
+                        "serviceOriginalName": "Prise",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 60,
+                        "hkFormat": "bool",
+                        "valueToSet": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "60_00000049-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_MANUALINFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "État (Éteint)",
+                    "logicalId": "60_00000049-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_ON_OFF",
+                    "configuration": {
+                        "aidiid": "4.61",
+                        "service": "switch",
+                        "serviceOriginalName": "Prise",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 60,
+                        "hkFormat": "bool",
+                        "valueToSet": 0
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "60_00000049-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_MANUALINFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "Puissance",
+                    "logicalId": "60_00000049-0000-1000-8000-0026BB765291_00000099-0000-1000-8000-0026BB765291_MANUALINFO",
+                    "configuration": {
+                        "aidiid": "4.62",
+                        "service": "switch",
+                        "serviceOriginalName": "Prise",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 60,
+                        "hkFormat": "float",
+                        "maxValue": 3000,
+                        "minValue": 0
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "numeric",
+                    "value": 13
+                },
+                {
+                    "name": "Température",
+                    "logicalId": "60_00000049-0000-1000-8000-0026BB765291_00000011-0000-1000-8000-0026BB765291_MANUALINFO",
+                    "configuration": {
+                        "aidiid": "4.63",
+                        "service": "switch",
+                        "serviceOriginalName": "Prise",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 60,
+                        "hkFormat": "float",
+                        "maxValue": 100,
+                        "minValue": -50,
+                        "step": 0.1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "unite": "°C",
+                    "type": "info",
+                    "subtype": "numeric",
+                    "value": 21.5
+                },
+                {
+                    "name": "Occupancy-detected",
+                    "logicalId": "60_00000049-0000-1000-8000-0026BB765291_00000003-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "4.64",
+                        "service": "switch",
+                        "serviceOriginalName": "Prise",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 60,
+                        "hkFormat": "uint8",
+                        "maxValue": 1,
+                        "minValue": 0,
+                        "step": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "binary",
+                    "value": true
+                },
+                {
+                    "name": "Accès administrateur uniquement (Info)",
+                    "logicalId": "60_00000049-0000-1000-8000-0026BB765291_00000001-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "4.65",
+                        "service": "switch",
+                        "serviceOriginalName": "Prise",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 60,
+                        "hkFormat": "uint8",
+                        "maxValue": 100,
+                        "minValue": 0,
+                        "step": 50
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "binary"
+                },
+                {
+                    "name": "Accès administrateur uniquement (Ouvrir)",
+                    "logicalId": "60_00000049-0000-1000-8000-0026BB765291_00000001-0000-1000-8000-0026BB765291_OPEN",
+                    "configuration": {
+                        "aidiid": "4.65",
+                        "service": "switch",
+                        "serviceOriginalName": "Prise",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 60,
+                        "hkFormat": "uint8",
+                        "maxValue": 100,
+                        "minValue": 0,
+                        "step": 50,
+                        "valueToSet": 100
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "60_00000049-0000-1000-8000-0026BB765291_00000001-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "Accès administrateur uniquement (Fermer)",
+                    "logicalId": "60_00000049-0000-1000-8000-0026BB765291_00000001-0000-1000-8000-0026BB765291_OPEN_CLOSE",
+                    "configuration": {
+                        "aidiid": "4.65",
+                        "service": "switch",
+                        "serviceOriginalName": "Prise",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 60,
+                        "hkFormat": "uint8",
+                        "maxValue": 100,
+                        "minValue": 0,
+                        "step": 50,
+                        "valueToSet": 0
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "60_00000049-0000-1000-8000-0026BB765291_00000001-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "Accès administrateur uniquement (Stop)",
+                    "logicalId": "60_00000049-0000-1000-8000-0026BB765291_00000001-0000-1000-8000-0026BB765291_OPEN_STOP",
+                    "configuration": {
+                        "aidiid": "4.65",
+                        "service": "switch",
+                        "serviceOriginalName": "Prise",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 60,
+                        "hkFormat": "uint8",
+                        "maxValue": 100,
+                        "minValue": 0,
+                        "step": 50,
+                        "valueToSet": 50
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "60_00000049-0000-1000-8000-0026BB765291_00000001-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "Configuration des points de terminaison (Info relue)",
+                    "logicalId": "60_00000049-0000-1000-8000-0026BB765291_00000118-0000-1000-8000-0026BB765291_MANUALINFO",
+                    "configuration": {
+                        "aidiid": "4.66",
+                        "service": "switch",
+                        "serviceOriginalName": "Prise",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 60,
+                        "hkFormat": "tlv8"
+                    },
+                    "display": [],
+                    "isVisible": 0,
+                    "type": "info",
+                    "subtype": "string",
+                    "value": "AQ=="
+                },
+                {
+                    "name": "Configuration des points de terminaison (Action)",
+                    "logicalId": "60_00000049-0000-1000-8000-0026BB765291_00000118-0000-1000-8000-0026BB765291_ACTION",
+                    "configuration": {
+                        "aidiid": "4.66",
+                        "service": "switch",
+                        "serviceOriginalName": "Prise",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 60,
+                        "hkFormat": "tlv8"
+                    },
+                    "display": {
+                        "title_disable": 1,
+                        "message_disable": 0,
+                        "title_placeholder": "Non Utilisé",
+                        "message_placeholder": "Chaîne à envoyer"
+                    },
+                    "isVisible": 0,
+                    "value": "60_00000049-0000-1000-8000-0026BB765291_00000118-0000-1000-8000-0026BB765291_MANUALINFO",
+                    "type": "action",
+                    "subtype": "message"
+                },
+                {
+                    "name": "Niveau de contrôle d'accès (Info)",
+                    "logicalId": "60_00000049-0000-1000-8000-0026BB765291_000000E5-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "4.67",
+                        "service": "switch",
+                        "serviceOriginalName": "Prise",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 60,
+                        "hkFormat": "string",
+                        "maxLen": 64
+                    },
+                    "display": [],
+                    "isVisible": 0,
+                    "type": "info",
+                    "subtype": "string",
+                    "value": "x"
+                },
+                {
+                    "name": "Niveau de contrôle d'accès (Action)",
+                    "logicalId": "60_00000049-0000-1000-8000-0026BB765291_000000E5-0000-1000-8000-0026BB765291_ACTION",
+                    "configuration": {
+                        "aidiid": "4.67",
+                        "service": "switch",
+                        "serviceOriginalName": "Prise",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 60,
+                        "hkFormat": "string",
+                        "maxLen": 64
+                    },
+                    "display": {
+                        "title_disable": 1,
+                        "message_disable": 0,
+                        "title_placeholder": "Non Utilisé",
+                        "message_placeholder": "Chaîne à envoyer"
+                    },
+                    "isVisible": 0,
+                    "value": "60_00000049-0000-1000-8000-0026BB765291_000000E5-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "message"
+                }
+            ],
+            "conf": [
+                [
+                    "manufacturer",
+                    "Acme Corp"
+                ],
+                [
+                    "model",
+                    "M1"
+                ],
+                [
+                    "serial-number",
+                    "123"
+                ],
+                [
+                    "firmware.revision",
+                    "1.0"
+                ]
+            ]
+        }
+    },
+    "noms historiques": {
+        "2": {
+            "name": "TV Salon",
+            "cmds": [
+                {
+                    "name": "Identifier",
+                    "type": "action",
+                    "subtype": "other",
+                    "isVisible": 1,
+                    "logicalId": "identify",
+                    "configuration": {
+                        "aidiid": "2.2",
+                        "service": "accessory-information",
+                        "serviceType": "0000003E-0000-1000-8000-0026BB765291"
+                    }
+                },
+                {
+                    "name": "Remote-key",
+                    "logicalId": "8_000000D8-0000-1000-8000-0026BB765291_000000E1-0000-1000-8000-0026BB765291_ACTION",
+                    "configuration": {
+                        "aidiid": "2.13",
+                        "service": "television",
+                        "serviceOriginalName": "TV Salon",
+                        "serviceType": "000000D8-0000-1000-8000-0026BB765291",
+                        "serviceIID": 8,
+                        "hkFormat": "uint8",
+                        "maxValue": 16,
+                        "minValue": 0,
+                        "step": 1,
+                        "valid-values": [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4,
+                            5,
+                            6,
+                            7,
+                            8,
+                            9,
+                            10,
+                            11,
+                            12,
+                            13,
+                            14,
+                            15,
+                            16
+                        ],
+                        "listValue": "0|Retour rapide;1|Avance rapide;2|Piste suivante;3|Piste précédente;4|Flèche haut;5|Flèche bas;6|Flèche gauche;7|Flèche droite;8|Sélection;9|Retour;10|Quitter;11|Lecture/Pause;15|Infos"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "action",
+                    "subtype": "select"
+                },
+                {
+                    "name": "Active-identifier (Info)",
+                    "logicalId": "8_000000D8-0000-1000-8000-0026BB765291_000000E7-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "2.11",
+                        "service": "television",
+                        "serviceOriginalName": "TV Salon",
+                        "serviceType": "000000D8-0000-1000-8000-0026BB765291",
+                        "serviceIID": 8,
+                        "hkFormat": "uint32"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "numeric",
+                    "value": 0
+                },
+                {
+                    "name": "Active-identifier (Action)",
+                    "logicalId": "8_000000D8-0000-1000-8000-0026BB765291_000000E7-0000-1000-8000-0026BB765291_ACTION",
+                    "configuration": {
+                        "aidiid": "2.11",
+                        "service": "television",
+                        "serviceOriginalName": "TV Salon",
+                        "serviceType": "000000D8-0000-1000-8000-0026BB765291",
+                        "serviceIID": 8,
+                        "hkFormat": "uint32"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "8_000000D8-0000-1000-8000-0026BB765291_000000E7-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "slider"
+                },
+                {
+                    "name": "Configured-name (Info)",
+                    "logicalId": "8_000000D8-0000-1000-8000-0026BB765291_000000E3-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "2.12",
+                        "service": "television",
+                        "serviceOriginalName": "TV Salon",
+                        "serviceType": "000000D8-0000-1000-8000-0026BB765291",
+                        "serviceIID": 8,
+                        "hkFormat": "string"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "string",
+                    "value": "TV Salon"
+                },
+                {
+                    "name": "Configured-name (Action)",
+                    "logicalId": "8_000000D8-0000-1000-8000-0026BB765291_000000E3-0000-1000-8000-0026BB765291_ACTION",
+                    "configuration": {
+                        "aidiid": "2.12",
+                        "service": "television",
+                        "serviceOriginalName": "TV Salon",
+                        "serviceType": "000000D8-0000-1000-8000-0026BB765291",
+                        "serviceIID": 8,
+                        "hkFormat": "string"
+                    },
+                    "display": {
+                        "title_disable": 1,
+                        "message_disable": 0,
+                        "title_placeholder": "Non Utilisé",
+                        "message_placeholder": "Chaîne à envoyer"
+                    },
+                    "isVisible": 1,
+                    "value": "8_000000D8-0000-1000-8000-0026BB765291_000000E3-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "message"
+                },
+                {
+                    "name": "Sleep-discovery-mode",
+                    "logicalId": "8_000000D8-0000-1000-8000-0026BB765291_000000E8-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "2.14",
+                        "service": "television",
+                        "serviceOriginalName": "TV Salon",
+                        "serviceType": "000000D8-0000-1000-8000-0026BB765291",
+                        "serviceIID": 8,
+                        "hkFormat": "uint8",
+                        "maxValue": 1,
+                        "minValue": 0,
+                        "step": 1,
+                        "valid-values": [
+                            0,
+                            1
+                        ],
+                        "possibleValues": "0=Non détectable<br/>1=Toujours détectable"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "numeric",
+                    "value": 1
+                },
+                {
+                    "name": "Active (Info)",
+                    "logicalId": "8_000000D8-0000-1000-8000-0026BB765291_000000B0-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "2.10",
+                        "service": "television",
+                        "serviceOriginalName": "TV Salon",
+                        "serviceType": "000000D8-0000-1000-8000-0026BB765291",
+                        "serviceIID": 8,
+                        "hkFormat": "uint8",
+                        "maxValue": 1,
+                        "minValue": 0,
+                        "step": 1,
+                        "valid-values": [
+                            0,
+                            1
+                        ],
+                        "possibleValues": "0=Inactif<br/>1=Actif"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "binary",
+                    "value": true
+                },
+                {
+                    "name": "Active (Activer)",
+                    "logicalId": "8_000000D8-0000-1000-8000-0026BB765291_000000B0-0000-1000-8000-0026BB765291_Active",
+                    "configuration": {
+                        "aidiid": "2.10",
+                        "service": "television",
+                        "serviceOriginalName": "TV Salon",
+                        "serviceType": "000000D8-0000-1000-8000-0026BB765291",
+                        "serviceIID": 8,
+                        "hkFormat": "uint8",
+                        "maxValue": 1,
+                        "minValue": 0,
+                        "step": 1,
+                        "valid-values": [
+                            0,
+                            1
+                        ],
+                        "valueToSet": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "8_000000D8-0000-1000-8000-0026BB765291_000000B0-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "Active (Désactiver)",
+                    "logicalId": "8_000000D8-0000-1000-8000-0026BB765291_000000B0-0000-1000-8000-0026BB765291_Active_Inactive",
+                    "configuration": {
+                        "aidiid": "2.10",
+                        "service": "television",
+                        "serviceOriginalName": "TV Salon",
+                        "serviceType": "000000D8-0000-1000-8000-0026BB765291",
+                        "serviceIID": 8,
+                        "hkFormat": "uint8",
+                        "maxValue": 1,
+                        "minValue": 0,
+                        "step": 1,
+                        "valid-values": [
+                            0,
+                            1
+                        ],
+                        "valueToSet": 0
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "8_000000D8-0000-1000-8000-0026BB765291_000000B0-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "Volume-selector",
+                    "logicalId": "15_00000113-0000-1000-8000-0026BB765291_000000EA-0000-1000-8000-0026BB765291_ACTION",
+                    "configuration": {
+                        "aidiid": "2.19",
+                        "service": "speaker",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000113-0000-1000-8000-0026BB765291",
+                        "serviceIID": 15,
+                        "hkFormat": "uint8",
+                        "maxValue": 1,
+                        "minValue": 0,
+                        "step": 1,
+                        "valid-values": [
+                            0,
+                            1
+                        ],
+                        "listValue": "0|Augmenter;1|Diminuer"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "action",
+                    "subtype": "select"
+                },
+                {
+                    "name": "Mute (Info)",
+                    "logicalId": "15_00000113-0000-1000-8000-0026BB765291_0000011A-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "2.16",
+                        "service": "speaker",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000113-0000-1000-8000-0026BB765291",
+                        "serviceIID": 15,
+                        "hkFormat": "bool"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "binary",
+                    "value": false
+                },
+                {
+                    "name": "Mute (Allumé)",
+                    "logicalId": "15_00000113-0000-1000-8000-0026BB765291_0000011A-0000-1000-8000-0026BB765291_ON",
+                    "configuration": {
+                        "aidiid": "2.16",
+                        "service": "speaker",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000113-0000-1000-8000-0026BB765291",
+                        "serviceIID": 15,
+                        "hkFormat": "bool",
+                        "valueToSet": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "15_00000113-0000-1000-8000-0026BB765291_0000011A-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "Mute (Eteint)",
+                    "logicalId": "15_00000113-0000-1000-8000-0026BB765291_0000011A-0000-1000-8000-0026BB765291_ON_OFF",
+                    "configuration": {
+                        "aidiid": "2.16",
+                        "service": "speaker",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000113-0000-1000-8000-0026BB765291",
+                        "serviceIID": 15,
+                        "hkFormat": "bool",
+                        "valueToSet": 0
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "15_00000113-0000-1000-8000-0026BB765291_0000011A-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "Active (Info)",
+                    "logicalId": "15_00000113-0000-1000-8000-0026BB765291_000000B0-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "2.17",
+                        "service": "speaker",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000113-0000-1000-8000-0026BB765291",
+                        "serviceIID": 15,
+                        "hkFormat": "uint8",
+                        "maxValue": 1,
+                        "minValue": 0,
+                        "step": 1,
+                        "valid-values": [
+                            0,
+                            1
+                        ],
+                        "possibleValues": "0=Inactif<br/>1=Actif"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "binary",
+                    "value": true
+                },
+                {
+                    "name": "Active (Activer)",
+                    "logicalId": "15_00000113-0000-1000-8000-0026BB765291_000000B0-0000-1000-8000-0026BB765291_Active",
+                    "configuration": {
+                        "aidiid": "2.17",
+                        "service": "speaker",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000113-0000-1000-8000-0026BB765291",
+                        "serviceIID": 15,
+                        "hkFormat": "uint8",
+                        "maxValue": 1,
+                        "minValue": 0,
+                        "step": 1,
+                        "valid-values": [
+                            0,
+                            1
+                        ],
+                        "valueToSet": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "15_00000113-0000-1000-8000-0026BB765291_000000B0-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "Active (Désactiver)",
+                    "logicalId": "15_00000113-0000-1000-8000-0026BB765291_000000B0-0000-1000-8000-0026BB765291_Active_Inactive",
+                    "configuration": {
+                        "aidiid": "2.17",
+                        "service": "speaker",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000113-0000-1000-8000-0026BB765291",
+                        "serviceIID": 15,
+                        "hkFormat": "uint8",
+                        "maxValue": 1,
+                        "minValue": 0,
+                        "step": 1,
+                        "valid-values": [
+                            0,
+                            1
+                        ],
+                        "valueToSet": 0
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "15_00000113-0000-1000-8000-0026BB765291_000000B0-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "Volume-control-type",
+                    "logicalId": "15_00000113-0000-1000-8000-0026BB765291_000000E9-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "2.18",
+                        "service": "speaker",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000113-0000-1000-8000-0026BB765291",
+                        "serviceIID": 15,
+                        "hkFormat": "uint8",
+                        "maxValue": 3,
+                        "minValue": 0,
+                        "step": 1,
+                        "valid-values": [
+                            0,
+                            1,
+                            2,
+                            3
+                        ],
+                        "possibleValues": "0=Aucun<br/>1=Relatif<br/>2=Relatif avec valeur actuelle<br/>3=Absolu"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "numeric",
+                    "value": 3
+                }
+            ],
+            "conf": [
+                [
+                    "manufacturer",
+                    "Acme Corp"
+                ],
+                [
+                    "model",
+                    "M1"
+                ],
+                [
+                    "serial-number",
+                    "123"
+                ],
+                [
+                    "firmware.revision",
+                    "1.0"
+                ]
+            ]
+        },
+        "3": {
+            "name": "Lumière zone canapé",
+            "cmds": [
+                {
+                    "name": "Identifier",
+                    "type": "action",
+                    "subtype": "other",
+                    "isVisible": 1,
+                    "logicalId": "identify",
+                    "configuration": {
+                        "aidiid": "3.2",
+                        "service": "accessory-information",
+                        "serviceType": "0000003E-0000-1000-8000-0026BB765291"
+                    }
+                },
+                {
+                    "name": "On (Info)",
+                    "logicalId": "10_00000043-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "3.12",
+                        "service": "lightbulb",
+                        "serviceOriginalName": "Lumière zone canapé",
+                        "serviceType": "00000043-0000-1000-8000-0026BB765291",
+                        "serviceIID": 10,
+                        "hkFormat": "bool"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "binary",
+                    "value": true
+                },
+                {
+                    "name": "On (Allumé)",
+                    "logicalId": "10_00000043-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_ON",
+                    "configuration": {
+                        "aidiid": "3.12",
+                        "service": "lightbulb",
+                        "serviceOriginalName": "Lumière zone canapé",
+                        "serviceType": "00000043-0000-1000-8000-0026BB765291",
+                        "serviceIID": 10,
+                        "hkFormat": "bool",
+                        "valueToSet": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "10_00000043-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "On (Eteint)",
+                    "logicalId": "10_00000043-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_ON_OFF",
+                    "configuration": {
+                        "aidiid": "3.12",
+                        "service": "lightbulb",
+                        "serviceOriginalName": "Lumière zone canapé",
+                        "serviceType": "00000043-0000-1000-8000-0026BB765291",
+                        "serviceIID": 10,
+                        "hkFormat": "bool",
+                        "valueToSet": 0
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "10_00000043-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "Brightness (Info)",
+                    "logicalId": "10_00000043-0000-1000-8000-0026BB765291_00000008-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "3.13",
+                        "service": "lightbulb",
+                        "serviceOriginalName": "Lumière zone canapé",
+                        "serviceType": "00000043-0000-1000-8000-0026BB765291",
+                        "serviceIID": 10,
+                        "hkFormat": "int",
+                        "maxValue": 100,
+                        "minValue": 0,
+                        "step": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "unite": "%",
+                    "type": "info",
+                    "subtype": "numeric",
+                    "value": 80
+                },
+                {
+                    "name": "Brightness (Action)",
+                    "logicalId": "10_00000043-0000-1000-8000-0026BB765291_00000008-0000-1000-8000-0026BB765291_ACTION",
+                    "configuration": {
+                        "aidiid": "3.13",
+                        "service": "lightbulb",
+                        "serviceOriginalName": "Lumière zone canapé",
+                        "serviceType": "00000043-0000-1000-8000-0026BB765291",
+                        "serviceIID": 10,
+                        "hkFormat": "int",
+                        "maxValue": 100,
+                        "minValue": 0,
+                        "step": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "unite": "%",
+                    "value": "10_00000043-0000-1000-8000-0026BB765291_00000008-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "slider"
+                },
+                {
+                    "name": "Color (Info)",
+                    "logicalId": "10_00000043-0000-1000-8000-0026BB765291_00000013-0000-1000-8000-0026BB765291_0000002F-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "3.14|3.15",
+                        "service": "lightbulb",
+                        "serviceOriginalName": "Lumière zone canapé",
+                        "serviceType": "00000043-0000-1000-8000-0026BB765291",
+                        "serviceIID": 10,
+                        "hkFormat": "hue-saturation"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "unite": "%",
+                    "type": "info",
+                    "subtype": "string",
+                    "value": "#ff0000"
+                },
+                {
+                    "name": "Color (Action)",
+                    "logicalId": "10_00000043-0000-1000-8000-0026BB765291_00000013-0000-1000-8000-0026BB765291_0000002F-0000-1000-8000-0026BB765291_ACTION",
+                    "configuration": {
+                        "aidiid": "3.14|3.15",
+                        "service": "lightbulb",
+                        "serviceOriginalName": "Lumière zone canapé",
+                        "serviceType": "00000043-0000-1000-8000-0026BB765291",
+                        "serviceIID": 10,
+                        "hkFormat": "hue-saturation",
+                        "maxLen": 7
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "unite": "%",
+                    "value": "10_00000043-0000-1000-8000-0026BB765291_00000013-0000-1000-8000-0026BB765291_0000002F-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "color"
+                },
+                {
+                    "name": "Color-temperature (Info)",
+                    "logicalId": "10_00000043-0000-1000-8000-0026BB765291_000000CE-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "3.16",
+                        "service": "lightbulb",
+                        "serviceOriginalName": "Lumière zone canapé",
+                        "serviceType": "00000043-0000-1000-8000-0026BB765291",
+                        "serviceIID": 10,
+                        "hkFormat": "uint32",
+                        "maxValue": 500,
+                        "minValue": 140,
+                        "step": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "numeric",
+                    "value": 300
+                },
+                {
+                    "name": "Color-temperature (Action)",
+                    "logicalId": "10_00000043-0000-1000-8000-0026BB765291_000000CE-0000-1000-8000-0026BB765291_ACTION",
+                    "configuration": {
+                        "aidiid": "3.16",
+                        "service": "lightbulb",
+                        "serviceOriginalName": "Lumière zone canapé",
+                        "serviceType": "00000043-0000-1000-8000-0026BB765291",
+                        "serviceIID": 10,
+                        "hkFormat": "uint32",
+                        "maxValue": 500,
+                        "minValue": 140,
+                        "step": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "10_00000043-0000-1000-8000-0026BB765291_000000CE-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "slider"
+                },
+                {
+                    "name": "Configured-name (Info)",
+                    "logicalId": "20_00000049-0000-1000-8000-0026BB765291_000000E3-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "3.21",
+                        "service": "switch",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 20,
+                        "hkFormat": "string"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "string",
+                    "value": "Lumière zone canapé Lumineux"
+                },
+                {
+                    "name": "Configured-name (Action)",
+                    "logicalId": "20_00000049-0000-1000-8000-0026BB765291_000000E3-0000-1000-8000-0026BB765291_ACTION",
+                    "configuration": {
+                        "aidiid": "3.21",
+                        "service": "switch",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 20,
+                        "hkFormat": "string"
+                    },
+                    "display": {
+                        "title_disable": 1,
+                        "message_disable": 0,
+                        "title_placeholder": "Non Utilisé",
+                        "message_placeholder": "Chaîne à envoyer"
+                    },
+                    "isVisible": 1,
+                    "value": "20_00000049-0000-1000-8000-0026BB765291_000000E3-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "message"
+                },
+                {
+                    "name": "On (Info)",
+                    "logicalId": "20_00000049-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "3.22",
+                        "service": "switch",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 20,
+                        "hkFormat": "bool"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "binary",
+                    "value": false
+                },
+                {
+                    "name": "On (Allumé)",
+                    "logicalId": "20_00000049-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_ON",
+                    "configuration": {
+                        "aidiid": "3.22",
+                        "service": "switch",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 20,
+                        "hkFormat": "bool",
+                        "valueToSet": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "20_00000049-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "On (Eteint)",
+                    "logicalId": "20_00000049-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_ON_OFF",
+                    "configuration": {
+                        "aidiid": "3.22",
+                        "service": "switch",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 20,
+                        "hkFormat": "bool",
+                        "valueToSet": 0
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "20_00000049-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "Configured-name (Info)",
+                    "logicalId": "30_00000049-0000-1000-8000-0026BB765291_000000E3-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "3.31",
+                        "service": "switch",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 30,
+                        "hkFormat": "string"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "string",
+                    "value": "Lumière zone canapé Veilleuse"
+                },
+                {
+                    "name": "Configured-name (Action)",
+                    "logicalId": "30_00000049-0000-1000-8000-0026BB765291_000000E3-0000-1000-8000-0026BB765291_ACTION",
+                    "configuration": {
+                        "aidiid": "3.31",
+                        "service": "switch",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 30,
+                        "hkFormat": "string"
+                    },
+                    "display": {
+                        "title_disable": 1,
+                        "message_disable": 0,
+                        "title_placeholder": "Non Utilisé",
+                        "message_placeholder": "Chaîne à envoyer"
+                    },
+                    "isVisible": 1,
+                    "value": "30_00000049-0000-1000-8000-0026BB765291_000000E3-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "message"
+                },
+                {
+                    "name": "On (Info)",
+                    "logicalId": "30_00000049-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "3.32",
+                        "service": "switch",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 30,
+                        "hkFormat": "bool"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "binary",
+                    "value": false
+                },
+                {
+                    "name": "On (Allumé)",
+                    "logicalId": "30_00000049-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_ON",
+                    "configuration": {
+                        "aidiid": "3.32",
+                        "service": "switch",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 30,
+                        "hkFormat": "bool",
+                        "valueToSet": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "30_00000049-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "On (Eteint)",
+                    "logicalId": "30_00000049-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_ON_OFF",
+                    "configuration": {
+                        "aidiid": "3.32",
+                        "service": "switch",
+                        "serviceOriginalName": "unset",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 30,
+                        "hkFormat": "bool",
+                        "valueToSet": 0
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "30_00000049-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                }
+            ],
+            "conf": [
+                [
+                    "manufacturer",
+                    "Acme Corp"
+                ],
+                [
+                    "model",
+                    "M1"
+                ],
+                [
+                    "serial-number",
+                    "123"
+                ],
+                [
+                    "firmware.revision",
+                    "1.0"
+                ]
+            ]
+        },
+        "4": {
+            "name": "Divers",
+            "cmds": [
+                {
+                    "name": "Identifier",
+                    "type": "action",
+                    "subtype": "other",
+                    "isVisible": 1,
+                    "logicalId": "identify",
+                    "configuration": {
+                        "aidiid": "4.2",
+                        "service": "accessory-information",
+                        "serviceType": "0000003E-0000-1000-8000-0026BB765291"
+                    }
+                },
+                {
+                    "name": "Position.current",
+                    "logicalId": "40_0000008C-0000-1000-8000-0026BB765291_0000006D-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "4.41",
+                        "service": "window-covering",
+                        "serviceOriginalName": "Volet",
+                        "serviceType": "0000008C-0000-1000-8000-0026BB765291",
+                        "serviceIID": 40,
+                        "hkFormat": "uint8",
+                        "maxValue": 100,
+                        "minValue": 0,
+                        "step": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "unite": "%",
+                    "type": "info",
+                    "subtype": "numeric",
+                    "value": 50
+                },
+                {
+                    "name": "Position.target (Info)",
+                    "logicalId": "40_0000008C-0000-1000-8000-0026BB765291_0000007C-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "4.42",
+                        "service": "window-covering",
+                        "serviceOriginalName": "Volet",
+                        "serviceType": "0000008C-0000-1000-8000-0026BB765291",
+                        "serviceIID": 40,
+                        "hkFormat": "uint8",
+                        "maxValue": 100,
+                        "minValue": 0,
+                        "step": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "unite": "%",
+                    "type": "info",
+                    "subtype": "numeric",
+                    "value": 50
+                },
+                {
+                    "name": "Position.target (Action)",
+                    "logicalId": "40_0000008C-0000-1000-8000-0026BB765291_0000007C-0000-1000-8000-0026BB765291_ACTION",
+                    "configuration": {
+                        "aidiid": "4.42",
+                        "service": "window-covering",
+                        "serviceOriginalName": "Volet",
+                        "serviceType": "0000008C-0000-1000-8000-0026BB765291",
+                        "serviceIID": 40,
+                        "hkFormat": "uint8",
+                        "maxValue": 100,
+                        "minValue": 0,
+                        "step": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "unite": "%",
+                    "value": "40_0000008C-0000-1000-8000-0026BB765291_0000007C-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "slider"
+                },
+                {
+                    "name": "Position.state",
+                    "logicalId": "40_0000008C-0000-1000-8000-0026BB765291_00000072-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "4.43",
+                        "service": "window-covering",
+                        "serviceOriginalName": "Volet",
+                        "serviceType": "0000008C-0000-1000-8000-0026BB765291",
+                        "serviceIID": 40,
+                        "hkFormat": "uint8",
+                        "maxValue": 2,
+                        "minValue": 0,
+                        "step": 1,
+                        "possibleValues": "0=En fermeture<br/>1=En ouverture<br/>2=Arrêté"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "numeric",
+                    "value": 2
+                },
+                {
+                    "name": "Active (Info)",
+                    "logicalId": "50_000000D0-0000-1000-8000-0026BB765291_000000B0-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "4.51",
+                        "service": "valve",
+                        "serviceOriginalName": "Arrosage",
+                        "serviceType": "000000D0-0000-1000-8000-0026BB765291",
+                        "serviceIID": 50,
+                        "hkFormat": "uint8",
+                        "maxValue": 1,
+                        "minValue": 0,
+                        "step": 1,
+                        "possibleValues": "0=Inactif<br/>1=Actif"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "binary",
+                    "value": false
+                },
+                {
+                    "name": "Active (Activer)",
+                    "logicalId": "50_000000D0-0000-1000-8000-0026BB765291_000000B0-0000-1000-8000-0026BB765291_Active",
+                    "configuration": {
+                        "aidiid": "4.51",
+                        "service": "valve",
+                        "serviceOriginalName": "Arrosage",
+                        "serviceType": "000000D0-0000-1000-8000-0026BB765291",
+                        "serviceIID": 50,
+                        "hkFormat": "uint8",
+                        "maxValue": 1,
+                        "minValue": 0,
+                        "step": 1,
+                        "valueToSet": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "50_000000D0-0000-1000-8000-0026BB765291_000000B0-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "Active (Désactiver)",
+                    "logicalId": "50_000000D0-0000-1000-8000-0026BB765291_000000B0-0000-1000-8000-0026BB765291_Active_Inactive",
+                    "configuration": {
+                        "aidiid": "4.51",
+                        "service": "valve",
+                        "serviceOriginalName": "Arrosage",
+                        "serviceType": "000000D0-0000-1000-8000-0026BB765291",
+                        "serviceIID": 50,
+                        "hkFormat": "uint8",
+                        "maxValue": 1,
+                        "minValue": 0,
+                        "step": 1,
+                        "valueToSet": 0
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "50_000000D0-0000-1000-8000-0026BB765291_000000B0-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "Valve-type",
+                    "logicalId": "50_000000D0-0000-1000-8000-0026BB765291_000000D5-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "4.52",
+                        "service": "valve",
+                        "serviceOriginalName": "Arrosage",
+                        "serviceType": "000000D0-0000-1000-8000-0026BB765291",
+                        "serviceIID": 50,
+                        "hkFormat": "uint8",
+                        "maxValue": 3,
+                        "minValue": 0,
+                        "step": 1,
+                        "possibleValues": "0=Vanne<br/>1=Arrosage<br/>2=Douche<br/>3=Robinet"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "numeric",
+                    "value": 1
+                },
+                {
+                    "name": "Remaining-duration",
+                    "logicalId": "50_000000D0-0000-1000-8000-0026BB765291_000000D3-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "4.53",
+                        "service": "valve",
+                        "serviceOriginalName": "Arrosage",
+                        "serviceType": "000000D0-0000-1000-8000-0026BB765291",
+                        "serviceIID": 50,
+                        "hkFormat": "uint32",
+                        "maxValue": 3600,
+                        "minValue": 0,
+                        "step": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "unite": "s",
+                    "type": "info",
+                    "subtype": "numeric",
+                    "value": 0
+                },
+                {
+                    "name": "On (Manual Info)",
+                    "logicalId": "60_00000049-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_MANUALINFO",
+                    "configuration": {
+                        "aidiid": "4.61",
+                        "service": "switch",
+                        "serviceOriginalName": "Prise",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 60,
+                        "hkFormat": "bool"
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "binary",
+                    "value": true
+                },
+                {
+                    "name": "On (Allumé)",
+                    "logicalId": "60_00000049-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_ON",
+                    "configuration": {
+                        "aidiid": "4.61",
+                        "service": "switch",
+                        "serviceOriginalName": "Prise",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 60,
+                        "hkFormat": "bool",
+                        "valueToSet": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "60_00000049-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_MANUALINFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "On (Eteint)",
+                    "logicalId": "60_00000049-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_ON_OFF",
+                    "configuration": {
+                        "aidiid": "4.61",
+                        "service": "switch",
+                        "serviceOriginalName": "Prise",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 60,
+                        "hkFormat": "bool",
+                        "valueToSet": 0
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "60_00000049-0000-1000-8000-0026BB765291_00000025-0000-1000-8000-0026BB765291_MANUALINFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "Puissance",
+                    "logicalId": "60_00000049-0000-1000-8000-0026BB765291_00000099-0000-1000-8000-0026BB765291_MANUALINFO",
+                    "configuration": {
+                        "aidiid": "4.62",
+                        "service": "switch",
+                        "serviceOriginalName": "Prise",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 60,
+                        "hkFormat": "float",
+                        "maxValue": 3000,
+                        "minValue": 0
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "numeric",
+                    "value": 13
+                },
+                {
+                    "name": "Temperature.current",
+                    "logicalId": "60_00000049-0000-1000-8000-0026BB765291_00000011-0000-1000-8000-0026BB765291_MANUALINFO",
+                    "configuration": {
+                        "aidiid": "4.63",
+                        "service": "switch",
+                        "serviceOriginalName": "Prise",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 60,
+                        "hkFormat": "float",
+                        "maxValue": 100,
+                        "minValue": -50,
+                        "step": 0.1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "unite": "°C",
+                    "type": "info",
+                    "subtype": "numeric",
+                    "value": 21.5
+                },
+                {
+                    "name": "Occupancy-detected",
+                    "logicalId": "60_00000049-0000-1000-8000-0026BB765291_00000003-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "4.64",
+                        "service": "switch",
+                        "serviceOriginalName": "Prise",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 60,
+                        "hkFormat": "uint8",
+                        "maxValue": 1,
+                        "minValue": 0,
+                        "step": 1
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "binary",
+                    "value": true
+                },
+                {
+                    "name": "Motion-detected (Info)",
+                    "logicalId": "60_00000049-0000-1000-8000-0026BB765291_00000001-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "4.65",
+                        "service": "switch",
+                        "serviceOriginalName": "Prise",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 60,
+                        "hkFormat": "uint8",
+                        "maxValue": 100,
+                        "minValue": 0,
+                        "step": 50
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "type": "info",
+                    "subtype": "binary"
+                },
+                {
+                    "name": "Motion-detected (Ouvrir)",
+                    "logicalId": "60_00000049-0000-1000-8000-0026BB765291_00000001-0000-1000-8000-0026BB765291_OPEN",
+                    "configuration": {
+                        "aidiid": "4.65",
+                        "service": "switch",
+                        "serviceOriginalName": "Prise",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 60,
+                        "hkFormat": "uint8",
+                        "maxValue": 100,
+                        "minValue": 0,
+                        "step": 50,
+                        "valueToSet": 100
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "60_00000049-0000-1000-8000-0026BB765291_00000001-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "Motion-detected (Fermer)",
+                    "logicalId": "60_00000049-0000-1000-8000-0026BB765291_00000001-0000-1000-8000-0026BB765291_OPEN_CLOSE",
+                    "configuration": {
+                        "aidiid": "4.65",
+                        "service": "switch",
+                        "serviceOriginalName": "Prise",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 60,
+                        "hkFormat": "uint8",
+                        "maxValue": 100,
+                        "minValue": 0,
+                        "step": 50,
+                        "valueToSet": 0
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "60_00000049-0000-1000-8000-0026BB765291_00000001-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "Motion-detected (Stop)",
+                    "logicalId": "60_00000049-0000-1000-8000-0026BB765291_00000001-0000-1000-8000-0026BB765291_OPEN_STOP",
+                    "configuration": {
+                        "aidiid": "4.65",
+                        "service": "switch",
+                        "serviceOriginalName": "Prise",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 60,
+                        "hkFormat": "uint8",
+                        "maxValue": 100,
+                        "minValue": 0,
+                        "step": 50,
+                        "valueToSet": 50
+                    },
+                    "display": [],
+                    "isVisible": 1,
+                    "value": "60_00000049-0000-1000-8000-0026BB765291_00000001-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "other"
+                },
+                {
+                    "name": "Setup-data (Manual Info)",
+                    "logicalId": "60_00000049-0000-1000-8000-0026BB765291_00000118-0000-1000-8000-0026BB765291_MANUALINFO",
+                    "configuration": {
+                        "aidiid": "4.66",
+                        "service": "switch",
+                        "serviceOriginalName": "Prise",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 60,
+                        "hkFormat": "tlv8"
+                    },
+                    "display": [],
+                    "isVisible": 0,
+                    "type": "info",
+                    "subtype": "string",
+                    "value": "AQ=="
+                },
+                {
+                    "name": "Setup-data (Action)",
+                    "logicalId": "60_00000049-0000-1000-8000-0026BB765291_00000118-0000-1000-8000-0026BB765291_ACTION",
+                    "configuration": {
+                        "aidiid": "4.66",
+                        "service": "switch",
+                        "serviceOriginalName": "Prise",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 60,
+                        "hkFormat": "tlv8"
+                    },
+                    "display": {
+                        "title_disable": 1,
+                        "message_disable": 0,
+                        "title_placeholder": "Non Utilisé",
+                        "message_placeholder": "Chaîne à envoyer"
+                    },
+                    "isVisible": 0,
+                    "value": "60_00000049-0000-1000-8000-0026BB765291_00000118-0000-1000-8000-0026BB765291_MANUALINFO",
+                    "type": "action",
+                    "subtype": "message"
+                },
+                {
+                    "name": "Display-order (Info)",
+                    "logicalId": "60_00000049-0000-1000-8000-0026BB765291_000000E5-0000-1000-8000-0026BB765291_INFO",
+                    "configuration": {
+                        "aidiid": "4.67",
+                        "service": "switch",
+                        "serviceOriginalName": "Prise",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 60,
+                        "hkFormat": "string",
+                        "maxLen": 64
+                    },
+                    "display": [],
+                    "isVisible": 0,
+                    "type": "info",
+                    "subtype": "string",
+                    "value": "x"
+                },
+                {
+                    "name": "Display-order (Action)",
+                    "logicalId": "60_00000049-0000-1000-8000-0026BB765291_000000E5-0000-1000-8000-0026BB765291_ACTION",
+                    "configuration": {
+                        "aidiid": "4.67",
+                        "service": "switch",
+                        "serviceOriginalName": "Prise",
+                        "serviceType": "00000049-0000-1000-8000-0026BB765291",
+                        "serviceIID": 60,
+                        "hkFormat": "string",
+                        "maxLen": 64
+                    },
+                    "display": {
+                        "title_disable": 1,
+                        "message_disable": 0,
+                        "title_placeholder": "Non Utilisé",
+                        "message_placeholder": "Chaîne à envoyer"
+                    },
+                    "isVisible": 0,
+                    "value": "60_00000049-0000-1000-8000-0026BB765291_000000E5-0000-1000-8000-0026BB765291_INFO",
+                    "type": "action",
+                    "subtype": "message"
+                }
+            ],
+            "conf": [
+                [
+                    "manufacturer",
+                    "Acme Corp"
+                ],
+                [
+                    "model",
+                    "M1"
+                ],
+                [
+                    "serial-number",
+                    "123"
+                ],
+                [
+                    "firmware.revision",
+                    "1.0"
+                ]
+            ]
+        }
+    }
+}
