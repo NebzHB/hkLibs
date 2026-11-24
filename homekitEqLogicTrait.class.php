@@ -26,15 +26,49 @@ require_once __DIR__ . '/homekitMapper.class.php';
  */
 trait homekitEqLogicTrait {
 	/**
-	 * Un équipement de cet objet porte-t-il déjà ce nom ?
+	 * Nom déjà pris dans la pièce, tous plugins confondus. Comparé par la base, comme son index unique
+	 * (name, object_id) en collation utf8mb4_unicode_ci : sans tenir compte de la casse ni des accents
+	 * (« Clim veranda » = « Clim Véranda »). Une comparaison en PHP laisserait passer ces doublons et
+	 * save() échouerait (SQLSTATE[23000] 1062 Duplicate entry).
+	 * $objectId vide (null, '' ou 0) = sans pièce ; $excludeId : équipement à ignorer (renommage).
 	 */
-	public static function nameExists($name, $objectId = null) {
-		foreach (\eqLogic::byObjectId($objectId, false) as $eqLogic) {
-			if ($name == $eqLogic->getName()) return true;
+	public static function nameExists($name, $objectId = null, $excludeId = null) {
+		$values = ['name' => $name];
+		$sql = 'SELECT id FROM eqLogic WHERE name=:name AND ';
+		if ($objectId) {
+			$sql .= 'object_id=:object_id';
+			$values['object_id'] = $objectId;
+		} else {
+			$sql .= 'object_id IS NULL';
 		}
-		return false;
+		if ($excludeId) {
+			$sql .= ' AND id<>:id';
+			$values['id'] = $excludeId;
+		}
+		return !empty(\DB::Prepare($sql . ' LIMIT 1', $values, \DB::FETCH_TYPE_ROW));
 	}
 
+	/**
+	 * Nom libre pour un nouvel équipement : le nom (raccourci et nettoyé comme le cœur), sinon
+	 * « nom_<suffixe> », sinon « nom_<suffixe>_2 », « _3 »... (doublons vérifiés par la base, voir nameExists).
+	 */
+	public static function freeEqName($name, $suffix, $objectId = null) {
+		$name = homekitMapper::fitName($name);
+		if (!static::nameExists($name, $objectId)) return $name;
+		$base = $name;
+		$i = 1;
+		do {
+			$end = '_' . $suffix . (($i > 1) ? '_' . $i : '');
+			$name = homekitMapper::fitName($base, 127 - strlen($end)) . $end;
+			$i++;
+		} while (static::nameExists($name, $objectId) && $i < 100);
+		return $name;
+	}
+
+	/**
+	 * Nom de commande déjà pris dans cet équipement : cmd::byEqLogicIdCmdName compare en SQL, donc comme l'index
+	 * unique (eqLogic_id, name) de la base (sans casse ni accents).
+	 */
 	public function cmdNameExist($name) {
 		return is_object(\cmd::byEqLogicIdCmdName($this->getId(), $name));
 	}
